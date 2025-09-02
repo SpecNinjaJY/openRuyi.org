@@ -1,0 +1,82 @@
+
+.menuItem{
+    color:#333
+}
+.menuItem:hover{
+    color:#0062ff;
+    cursor: pointer;
+}
+
+
+/* 两行文字打点样式 */
+.two-line-ellipsis {
+  /* 1. 限制文本最多显示 2 行 */
+  display: -webkit-box; /* 兼容 WebKit 内核浏览器（如 Chrome、Safari） */
+  -webkit-line-clamp: 2; /* 控制显示行数 */
+  -webkit-box-orient: vertical; /* 文本垂直排列（必须配合 line-clamp 使用） */
+  
+  /* 2. 超出部分隐藏并显示省略号 */
+  overflow: hidden; /* 隐藏超出容器的文本 */
+  text-overflow: ellipsis; /* 溢出文本用 ... 表示（line-clamp 已隐含，但添加更稳妥） */
+  
+  /* 可选：控制行高（增强可读性） */
+  line-height: 1.5; /* 根据需求调整，避免行间距过密或过疏 */
+}
+
+.ant-calendar-mode-select { display: none }
+
+.ant-picker-calendar .ant-picker-panel .ant-picker-body {
+  padding:0px !important;
+  background-color: #f6f9ff;
+}
+
+.ant-picker-calendar.ant-picker-calendar-full .ant-picker-calendar-date{
+  background-color: #fff;
+}
+
+.ant-select-selector{
+  border:none !important
+}
+
+/* 鼠标点击时移除边框，键盘聚焦时保留自定义阴影 */
+.ant-btn:focus:not(:focus-visible) {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* 键盘聚焦时，用浅色阴影替代黑色边框（可选，自定义视觉反馈） */
+.ant-btn:focus-visible {
+  outline: none !important;
+  box-shadow: 0 0 0 2px rgba(47, 128, 237, 0.3) !important; /* 浅蓝色阴影，与antd主题匹配 */
+}
+
+
+.custom-no-underline-tabs .ant-tabs-tab.ant-tabs-tab-active::after {
+  display: none !important; /* 完全隐藏伪元素下划线 */
+}
+
+
+.custom-no-underline-tabs .ant-tabs-ink-bar {
+  display: none !important; /* 隐藏 ink-bar 下划线元素 */
+}
+
+button:focus,
+button:focus-visible {
+  outline: none !important; /* 完全移除默认黑色焦点轮廓 */
+  box-shadow: none !important; /* 可选：若按钮有自定义聚焦阴影（如 antd 按钮），一并移除 */
+}
+
+.ant-tabs .ant-tabs-tab {
+  font-size: 16px ;
+}
+
+.ant-tabs-top >.ant-tabs-nav::before{
+  display: none ;
+}
+
+.ant-layout-footer{
+  padding:0px 
+}
+
+
+
