@@ -1,13 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { useLanguage } from '../contexts/LanguageContext';
-import CommunityCarousel from '../components/home/CommunityCarousel';
-import HomeTitle from '../components/home/HomeTitle';
+import { useLanguage } from '../../contexts/LanguageContext';
+import CommunityCarousel from '../../components/home/CommunityCarousel';
+import HomeTitle from '../../components/home/HomeTitle';
 import Arrow from '@/assets/home/arrow.svg'
-import MasonryGallery from '../components/home/MasonryGallery';
-import NewItem from '../components/home/NewsItem';
-import ActivityArrange from '../components/home/Arrange';
-
+import MasonryGallery from '../../components/home/MasonryGallery';
+import NewItem from '../../components/home/NewsItem';
+import ActivityArrange from '../../components/home/Arrange';
+import './index.css'
 
 
 // 模拟最新动态数据
@@ -121,7 +121,42 @@ const Home = () => {
               <HomeTitle title1={t('cooperate')} title2={t('cooperatetitle')} />
           </div>
           <div className='container'>
-            
+            <div className='text-[#666] text-[16px] mb-3'>{t('jointly')}</div>
+              <div className="logolist"> 
+                {
+                    [...Array(17).keys()].map(i => i + 1).map((iteml,indexl)=>{
+                      return <div 
+                      className="logoItem" 
+                      key={indexl}
+                      style={{backgroundImage:"url(/logolist/1/"+iteml+".png)"}}></div>
+                    })
+                  }
+              </div>
+
+
+              <div className='text-[#666] text-[16px] mb-3 mt-7'>{t('build')}</div>
+              <div className="logolist"> 
+                {
+                    [...Array(4).keys()].map(i => i + 1).map((iteml,indexl)=>{
+                      return <div 
+                      className="logoItem" 
+                      key={indexl}
+                      style={{backgroundImage:"url(/logolist/2/"+iteml+".png)"}}></div>
+                    })
+                  }
+              </div>
+
+              <div className='text-[#666] text-[16px] mb-3 mt-7'>{t('friendly')}</div>
+              <div className="logolist"> 
+                {
+                    [...Array(3).keys()].map(i => i + 1).map((iteml,indexl)=>{
+                      return <div 
+                      className="logoItem" 
+                      key={indexl}
+                      style={{backgroundImage:"url(/logolist/3/"+iteml+".png)"}}></div>
+                    })
+                  }
+              </div>
           </div>
       </section>
 

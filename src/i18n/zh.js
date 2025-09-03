@@ -17,12 +17,19 @@ export default {
   learning: '任务学习',
   joinNow: '立即加入',
   
-  // 首页英雄区
+  // 首页区
   heroTitle: '如意系列',
   heroSubtitle: '精选如意社区优质项目，诚邀开发者参与RISC-V开源项目的开发共建',
   getStarted: '开始探索',
   exploreProjects: '浏览项目',
+
+  //赞助方
   
+  jointly:'联合发起单位',
+  build:'共建单位',
+  friendly:'友情单位',
+
+
   // 统计数据
   projects: '项目数',
   developers: '开发者',
