@@ -6,8 +6,8 @@ export default {
     { text: '动态', path: '/news' },
     { text: '技术', path: '/about-us' },
     { text: '任务', path: '/about-us' },
-    { text: '学习', path: '/about-us' },
-
+    { text: '学习', path: '/learning' },
+     { text: '下载', path: '/download' },
   ],
   // 导航栏
   home: '首页',
@@ -37,10 +37,7 @@ export default {
   events: '活动数',
   
   // 热门项目
-  popularProjects: '热门项目',
-  popularProjectsDesc: '社区中最受欢迎的开源项目',
   viewAll: '查看更多',
-  viewOnGithub: '在Github上查看',
   
   // 最新动态
   latestNews: '动态速览',
@@ -81,6 +78,18 @@ export default {
   yourname:'姓名',
   yourEmail: '邮箱',
   subscribe: '立即订阅',
+
+  //下载
+
+  downtitle:'下载中心',
+  downsubtl:'一站式资源下载获取',
+  title1:'openRuyi 操作系统社区发行版',
+  t1subs1:'openRuyi 25.09 (RVA20)',
+  t1subs2:'openRuyi 25.09 (RVA23)',
+  t1des1:'openRuyi 25.09 (RVA20)  是面向 RVA20 硬件平台基于 X.X 内核的滚动版本，面服务器、云和 FPGA 场景，提供 ISO、QCOW2、rootfs 等多种制品类型。',
+  t1des2:'openRuyi 25.09 (RVA20)  是面向 RVA20 硬件平台基于 X.X 内核的滚动版本，面服务器、云和 FPGA 场景，提供 ISO、QCOW2、rootfs 等多种制品类型。',
+
+  column:['应用场景','软件包类型','软件包大小','完整性校验','软件包下载'],
  
 
   // 404页面
@@ -96,7 +105,6 @@ export default {
 
 
   //新闻页面
-
   empty:'暂无符合条件的新闻数据'
 };
     

@@ -198,7 +198,7 @@ const News = () =>{
     return <div className="space-b-16">
         <div className='relative'>
             <img src={LogoSvg} className='w-full'/>
-            <span className='absolute left-[60px] top-1/3 text-[36px] text-[#333]'>{t('news')}</span>
+            <span className='absolute left-[60px] font-semibold top-1/3 text-[36px] text-[#333]'>{t('news')}</span>
         </div>
          <section className="py-12 bg-[#f6f9ff]">
             <div className="container px-4 flex justify-between">

@@ -4,7 +4,7 @@ import Home from '../pages/Home/Home';
 // import Develop from '../pages/Develop';
 import News from '../pages/News/News';
 import NewsDetail from '../pages/News/NewsDetail';
-// import Learning from '../pages/Learning';
+import Download from '../pages/Download';
 import NotFound from '../pages/404';
 import Layout from '../components/Layout';
 
@@ -18,7 +18,7 @@ const router = createBrowserRouter([
     //   { path: '/develop', element: <Develop /> },
   { path: '/news', element: <News /> },
   { path: '/newsdetail/:newsId', element: <NewsDetail /> },
-    //   { path: '/learning', element: <Learning /> },
+  { path: '/download', element: <Download /> },
     ]
   }
 ]);

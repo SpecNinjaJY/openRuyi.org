@@ -1,0 +1,15 @@
+.typeBtn:hover{
+    border:2px solid #0062FF;
+    color:#0062FF
+}
+
+.isActive{
+    border:2px solid #0062FF;
+    color:#0062FF
+}
+
+.ant-table-wrapper .ant-table-thead >tr>th{
+    color:#fff;
+    background-color: #5C9BFF;
+}
+
