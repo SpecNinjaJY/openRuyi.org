@@ -46,7 +46,7 @@ const Footer = () => {
           <div><img src={LogoSvg}/></div>
           <div className="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0">
           {/* 渲染导航链接，添加竖线分隔符 */}
-          {footerLinks.map((link, index) => (
+          {/* {footerLinks.map((link, index) => (
             <React.Fragment key={link.text}>
               <a 
                 href={link.href} 
@@ -55,12 +55,12 @@ const Footer = () => {
               >
                 {link.text}
               </a>
-              {/* 除最后一个元素外，添加竖线分隔符 */}
+             
               {index !== footerLinks.length - 1 && (
                 <span className="text-gray-500">|</span>
               )}
             </React.Fragment>
-          ))}
+          ))} */}
         </div>
         </div>  
 

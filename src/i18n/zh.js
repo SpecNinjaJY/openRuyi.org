@@ -1,5 +1,14 @@
 export default {
-  menulist:['项目','开发','动态','技术','任务','学习'],
+  // menulist:['项目','开发','动态','技术','任务','学习'],
+  menulist:[
+    { text: '项目', path: '/' },
+    { text: '开发', path: '/privacy-policy' },
+    { text: '动态', path: '/news' },
+    { text: '技术', path: '/about-us' },
+    { text: '任务', path: '/about-us' },
+    { text: '学习', path: '/about-us' },
+
+  ],
   // 导航栏
   home: '首页',
   develop: '开发',
