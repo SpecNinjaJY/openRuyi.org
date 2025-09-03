@@ -81,17 +81,8 @@ export default {
   yourname:'姓名',
   yourEmail: '邮箱',
   subscribe: '立即订阅',
-  footerDescription: '一个连接全球开发者的开源社区，共同学习、分享和创造',
-  contactUs: '联系我们',
-  emailUs: '给我们发邮件',
-  callUs: '致电我们',
-  location: '地址',
-  allRightsReserved: '保留所有权利',
-  privacyPolicy: '隐私政策',
-  termsOfService: '服务条款',
-  cookiePolicy: 'Cookie政策',
-  sitemap: '网站地图',
-  
+ 
+
   // 404页面
   goBack: '返回上一页',
   pageNotFound: '页面未找到',
@@ -101,6 +92,11 @@ export default {
   documentation: '文档中心',
   stillNeedHelp: '仍然需要帮助？',
   helpDescription: ' 如果您无法找到所需内容，请 ',
-  contactSupport: '联系我们的支持团队'
+  contactSupport: '联系我们的支持团队',
+
+
+  //新闻页面
+
+  empty:'暂无符合条件的新闻数据'
 };
     

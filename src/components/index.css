@@ -34,9 +34,9 @@
   background-color: #fff;
 }
 
-.ant-select-selector{
+/* .ant-select-selector{
   border:none !important
-}
+} */
 
 /* 鼠标点击时移除边框，键盘聚焦时保留自定义阴影 */
 .ant-btn:focus:not(:focus-visible) {

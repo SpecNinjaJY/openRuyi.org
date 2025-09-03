@@ -100,8 +100,8 @@ const Footer = () => {
         </div>
         
         {/* 版权和底部信息 */}
-        <div className="flex flex-col md:flex-row justify-between items-center">
-          <Text className="text-[#999] text-sm mb-2 md:mb-0">
+        <div className="flex flex-col md:flex-row justify-center items-center">
+          <Text className="text-[#999] text-sm mb-2 md:mb-0 mr-10">
             © {new Date().getFullYear()} OpenRuyi {t('allRightsReserved')}
           </Text>
           <div className="flex flex-wrap justify-center text-[#999] text-sm">

@@ -125,62 +125,6 @@ button:focus-visible {
   height:74px
 }
 
-/* 1. 处理 Select 组件：去除背景色和边框 */
-/* 目标元素：Select 的输入框容器和下拉触发框 */
-.custom-no-bg-select {
-  /* 穿透样式隔离（若使用CSS Modules，需加 :global()；若未使用，可直接写 .ant-select-selector） */
-.ant-select-selector {
-    background-color: transparent !important; /* 透明背景 */
-    border: none !important; /* 去除边框 */
-    box-shadow: none !important; /* 去除阴影（避免focus时出现） */
-  }
 
-  /* 处理禁用状态（可选，若有禁用场景） */
-.ant-select-disabled .ant-select-selector {
-    background-color: transparent !important;
-    border: none !important;
-  }
 
-  /* 处理下拉选项hover状态（可选，保持默认或自定义） */
-.ant-select-item-option-active:not(.ant-select-item-option-disabled) {
-    background-color: rgba(0, 122, 255, 0.1) !important; /* 轻微蓝色hover，可选 */
-  }
-}
-
-/* 2. 处理 RangePicker 组件：去除背景色和边框 */
-/* 目标元素：RangePicker 的输入框容器、输入区、分隔符 */
-.custom-no-bg-range-picker {
-  /* 穿透样式隔离（定位RangePicker的输入框容器） */
-  .ant-picker {
-    background-color: transparent !important; /* 透明背景 */
-    border: none !important; /* 去除边框 */
-    box-shadow: none !important; /* 去除阴影 */
-  }
-
-  /* 处理输入框内部文字区域（确保单个输入框也无背景） */
-.ant-picker-input > input {
-    background-color: transparent !important;
-  }
-
-  /* 处理分隔符（可选：调整颜色或保留默认） */
-.ant-picker-separator {
-    color: #999 !important; /* 分隔符灰色，可选 */
-  }
-
-  /* 处理禁用状态（可选） */
-.ant-picker-disabled .ant-picker {
-    background-color: transparent !important;
-    border: none !important;
-  }
-
-  /* 处理日期面板hover状态（可选，保持默认或自定义） */
-.ant-picker-cell:hover:not(.ant-picker-cell-disabled) .ant-picker-cell-inner {
-    background-color: rgba(0, 122, 255, 0.1) !important;
-  }
-}
-
-/* 3. 可选：统一输入框占位符颜色（增强视觉一致性） */
-.ant-select-placeholder,.ant-picker-placeholder {
-  color: #999 !important; /* 占位符灰色 */
-}
 

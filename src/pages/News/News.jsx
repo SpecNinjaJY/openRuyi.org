@@ -1,15 +1,18 @@
 
 import LogoSvg from '@/assets/news/newsbanner.svg';
-import { useLanguage } from '../contexts/LanguageContext';
+import { useLanguage } from '../../contexts/LanguageContext';
 import { 
   Layout, Card, Input, Select, DatePicker, Pagination, 
   Typography, Space, Row, Col, Tag, Divider 
 } from 'antd';
 import { useEffect, useState } from 'react';
 import { 
-  CalendarOutlined, UserOutlined, 
   SearchOutlined 
 } from '@ant-design/icons';
+import './index.css'
+import emptyLogo from '@/assets/news/empty.svg'
+
+
 const { Title, Text } = Typography;
 const { Option } = Select;
 const { RangePicker } = DatePicker;
@@ -199,7 +202,6 @@ const News = () =>{
         </div>
          <section className="py-12 bg-[#f6f9ff]">
             <div className="container px-4 flex justify-between">
-           
                  <Row gutter={[16, 16]} className='w-[70%]'>
                     {/* 关键词搜索 */}
                     <Col xs={24} sm={12} md={6}>
@@ -263,14 +265,14 @@ const News = () =>{
                         />
                 
                     </Col>
-          </Row>
+                </Row>
             </div>
             <div className="container px-4 flex flex-wrap items-baseline justify-between">
                          {getCurrentPageData().length > 0 ? (
             <div className="space-y-4 w-full">
               {getCurrentPageData().map((news,index) => (
                
-                  <Row key={index} gutter={[24, 16]} className='mt-10'>
+                  <Row key={index} gutter={[24, 16]} className='mt-10 cursor-pointer'>
                     <Col xs={24} md={18}>
                       {/* 新闻标题 */}
                       <Title level={5} style={{fontSize:22,fontWeight:500}} className=" mb-4 text-[#333] hover:text-[#0062ff] cursor-pointer transition-colors">
@@ -322,11 +324,26 @@ const News = () =>{
             </div>
           ) : (
             // 无数据提示
-            <div className="text-center py-16 bg-white rounded-lg shadow-sm">
-              <Text className="text-gray-500 text-lg">暂无符合条件的新闻数据</Text>
+            <div className="flex flex-col py-16 bg-#f6f9ff w-full items-center">
+              <img src={emptyLogo} width={110} height={110}/>
+              <Text className="text-[#999] text-lg mt-5 ">{t('empty')}</Text>
             </div>
           )}
             </div>
+
+             {/* 分页区域 */}
+            { totalCount >0 && <div className="container flex justify-end mt-8 relative px-3">
+              <Pagination
+                current={currentPage}
+                pageSize={pageSize}
+                total={totalCount}
+                onChange={handlePageChange}
+                showSizeChanger={false}
+                showQuickJumper
+                showTotal={(total) => `共 ${total} 条新闻`}
+                className="mt-4"
+              />
+            </div>}
         
       </section>
 
