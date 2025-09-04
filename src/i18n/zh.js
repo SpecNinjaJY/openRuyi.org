@@ -19,7 +19,7 @@ export default {
   
   // 首页区
   heroTitle: '如意系列',
-  heroSubtitle: '精选如意社区优质项目，诚邀开发者参与RISC-V开源项目的开发共建',
+  heroSubtitle: 'openRuyi 社区开源项目',
   getStarted: '开始探索',
   exploreProjects: '浏览项目',
 
@@ -29,12 +29,6 @@ export default {
   build:'共建单位',
   friendly:'友情单位',
 
-
-  // 统计数据
-  projects: '项目数',
-  developers: '开发者',
-  contributions: '贡献数',
-  events: '活动数',
   
   // 热门项目
   viewAll: '查看更多',
@@ -49,6 +43,7 @@ export default {
     // 活动日程
   arrange: '活动日程',
   arrangeDesc: '掌握各类活动动态，不错过每一次交流协作',
+  emptyarrange:'当前没有活动数据',
 
   tabs1: '全部',
   tabs2: '会议',

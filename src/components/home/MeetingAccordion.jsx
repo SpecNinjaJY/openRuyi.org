@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
 import { ClockCircleOutlined, LinkOutlined, UserOutlined, DownOutlined, UpOutlined, HeatMapOutlined, EnvironmentOutlined } from '@ant-design/icons';
 import 'tailwindcss/tailwind.css'
-
-
+import dayjs from 'dayjs';
+import emptyLogo from '@/assets/news/empty.svg'
+import { useLanguage } from '../../contexts/LanguageContext';
 // 示例会议数据
 
 
 const MeetingAccordion = (props) => {
-    const {data,type} = props
+     const { t } = useLanguage();
+    const {data,date} = props
   // 存储当前展开的会议ID（null 表示全部收起）
   const [expandedId, setExpandedId] = useState(null);
 
@@ -15,17 +17,17 @@ const MeetingAccordion = (props) => {
   const toggleAccordion = (id) => {
     setExpandedId(expandedId === id ? null : id);
   };
-  console.log(data)
+  
   return (
-    <div className="w-full max-w-3xl mx-auto py-2 rounded-lg ">
+    <div className="mx-auto py-4 rounded-sm bg-white max-h-[697px] w-full">
       <div className="space-y-3">
-        {data?.length>0 ? data.map((meeting) => {
+        {(data.length >0 && data.filter(d=>d.date=== dayjs(date).format('YYYY-MM-DD'))?.length>0) ? data.filter(d=>d.date=== dayjs(date).format('YYYY-MM-DD')).map((meeting) => {
           const isExpanded = expandedId === meeting.id;
           return (
             // 手风琴单个面板容器
             <div 
               key={meeting.id} 
-              className="bg-white rounded-lg shadow-sm overflow-hidden transition-all duration-300 ease-in-out "
+              className="bg-white rounded-lg shadow-lg w-[90%] mx-auto overflow-hidden transition-all duration-300 ease-in-out "
             >
               {/* 1. 手风琴头部（点击区域）- 展示基础信息 */}
               <button
@@ -54,7 +56,7 @@ const MeetingAccordion = (props) => {
                 <div className="ml-4 text-gray-500 transition-transform duration-300">
                   {isExpanded ? <UpOutlined /> : <DownOutlined />}
                 </div>
-                <div style={{background:type == 1 ? '#0062ff':type == 2 ? '#CA4EFF': '#FF6F00'}} className="text-white absolute text-center w-[64px] top-0 right-0 px-1 rounded-tr-md rounded-bl-md">{meeting.type}</div>
+                <div style={{background:meeting.code == 1 ? '#0062ff':meeting.code == 2 ? '#CA4EFF': '#FF6F00'}} className="text-white absolute text-center w-[64px] top-0 right-0 px-1 rounded-tr-md rounded-bl-md">{meeting.type}</div>
               </button>
 
               {/* 2. 手风琴内容（详情区域）- 展开时显示 */}
@@ -114,7 +116,10 @@ const MeetingAccordion = (props) => {
               </div>
             </div>
           );
-        }):null}
+        }):  <div className="flex flex-col py-16 bg-#f6f9ff w-full items-center">
+                <img src={emptyLogo} width={110} height={110}/>
+                <span className="text-[#999] text-lg mt-5 ">{t('emptyarrange')}</span>
+              </div>}
       </div>
     </div>
   );

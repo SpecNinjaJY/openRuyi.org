@@ -5,11 +5,13 @@ import { LeftOutlined, RightOutlined } from '@ant-design/icons';
 import '../index.css'
 import { useLanguage } from '../../contexts/LanguageContext';
 import MeetingAccordion from './MeetingAccordion';
-const mockMeetings = [
-  {
+
+const meetings = [
+    {
     id: 'm1',
     name: '产品需求评审会 V2.0',
-    date:'2025-09-23',
+    date:'2025-09-04',
+      code:1,
     time: '10:00-11:30',
     location: '线上腾讯会议',
     type: '会议',
@@ -21,7 +23,8 @@ const mockMeetings = [
   {
     id: 'm2',
     name: '前端架构优化讨论会',
-    date:'2025-09-23',
+    date:'2025-09-05',
+      code:1,
     time: '14:00-16:00',
     location: '公司3楼会议室A',
     type: '会议',
@@ -33,42 +36,25 @@ const mockMeetings = [
     id: 'm3',
     name: 'Q4 项目规划启动会',
     time: '09:30-11:00',
-    date:'2025-09-23',
+    date:'2025-09-06',
+    code:1,
     location: '线上飞书会议',
     type: '会议',
     meetingId: '7654-3210-9876',
     link: 'https://meet.larksuite.com/j/765432109876',
     host: '王项目经理'
   }
-];
-
-const meetings = [
-    {   label:'安全委员会&安全技术SIG例会安全委员会',
-        title:'安全委员会&安全技术SIG例会安全委员会',date:'2025-09-23',time:'10:00-11:00',location:'北京',moreDetail:{
-        starter:'disnight',
-        time:'10:00-11:00',
-        platform:'WeLink',
-        id:'989544300',
-        link:'https://meeting.huaweicloud.com:36443/#/j/989544300'
-    }},
-    {   label:'安全委员会&安全技术SIG例会安全委员会',
-        title:'安全委员会&安全技术SIG例会安全委员会2',date:'2025-09-23',time:'13:00-14:00',location:'北京',moreDetail:{
-        starter:'disnight',
-        time:'10:00-11:00',
-        platform:'WeLink',
-        id:'989544300',
-        link:'https://meeting.huaweicloud.com:36443/#/j/989544300'
-    }}
 ]
 
 const org =[
     {
     id: 'm5',
     name: '需求评审会 V2.0',
-    date:'2025-09-23',
+    date:'2025-09-06',
     time: '10:00-11:30',
     location: '线上腾讯会议',
     type: '社区',
+    code:2,
     meetingId: '876 5432 1987',
     link: 'https://meeting.tencent.com/dm/abc123xyz',
     host: '张产品经理',
@@ -77,10 +63,11 @@ const org =[
   {
     id: 'm5',
     name: '架构优化讨论会',
-    date:'2025-09-23',
+    date:'2025-09-08',
     time: '14:00-16:00',
     location: '公司3楼会议室A',
     type: '社区',
+    code:2,
     meetingId: '987 6543 2109',
     link: 'https://zoom.us/j/98765432109?pwd=abcdef',
     host: '李前端负责人'
@@ -91,10 +78,11 @@ const activity = [
     {
     id: 'm7',
     name: '架构优化讨论会',
-    date:'2025-09-23',
+    date:'2025-09-10',
     time: '14:00-16:00',
     location: '公司3楼会议室A',
     type: '活动赛事',
+    code:3,
     meetingId: '987 6543 2109',
     link: 'https://zoom.us/j/98765432109?pwd=abcdef',
     host: '李前端负责人'
@@ -120,6 +108,8 @@ const getListData = value => {
 };
 
 const ActivityArrange = () =>{
+
+    const { t } = useLanguage();
     /* 日历功能 */
   const dateCellRender = value => {
     const listData = getListData(value);
@@ -132,7 +122,6 @@ const ActivityArrange = () =>{
     );
   };
   const cellRender = (current, info) => {
-    //console.log(current,info)
     if (info.type === 'date') return dateCellRender(current);
 
     return info.originNode;
@@ -168,18 +157,17 @@ const ActivityArrange = () =>{
     return (
       <div className="flex items-center justify-center w-full px-2 mb-3">
         {/* 中间：年月选择器（保留核心功能，删除面板切换） */}
-
         <Button
             icon={<LeftOutlined />}
             
             onClick={handlePrevMonth}
-            className="p-1 bg-[#f6f9ff] border-[#e5e5e5] w-[60px] mr-4" // 圆形按钮样式（可选）
+            className="p-1 bg-[#f6f9ff] border-[#e5e5e5] rounded-[4px] w-[60px] mr-4" // 圆形按钮样式（可选）
         />
           {/* 年份选择下拉框 */}
           <Select
             value={currentDate.year()}
             onChange={handleYearChange}
-            style={{ width: 190,marginRight:16 }}
+            style={{ width: 190,marginRight:16,borderRadius:4 }}
          
             showSearch={false} // 关闭搜索（可选）
           >
@@ -206,9 +194,8 @@ const ActivityArrange = () =>{
           </Select>
           <Button
             icon={<RightOutlined />}
-           
             onClick={handleNextMonth}
-            className="p-1 bg-[#f6f9ff] border-[#e5e5e5] w-[60px] ml-4"
+            className="p-1 bg-[#f6f9ff] border-[#e5e5e5] w-[60px] ml-4 rounded-[4px]"
           />
 
       </div>
@@ -216,43 +203,32 @@ const ActivityArrange = () =>{
   };
 
 
-  const { t } = useLanguage();
-
-  /* tabs功能 */
-  const onChange = key => {
-    console.log(key);
-    };
-
-
 const items = [
   {
     key: '1',
     label: t('tabs1'),
-    children: 'Content of Tab Pane 1',
+    children: <MeetingAccordion date={currentDate} data={[...meetings,...org,...activity]}/>,
   },
   {
     key: '2',
     label: t('tabs2'),
-    children: <MeetingAccordion data={mockMeetings} type={1}/>,
+    children: <MeetingAccordion date={currentDate} data={meetings} />,
   },
   {
     key: '3',
     label: t('tabs3'),
-    children: <MeetingAccordion data={org} type={2}/>,
+    children: <MeetingAccordion date={currentDate} data={org} />,
   },
     {
     key: '4',
     label: t('tabs4'),
-    children: <MeetingAccordion data={activity} type={3}/>,
+    children: <MeetingAccordion date={currentDate} data={activity}/>,
   }
 ];
 
 
     return (
         <div className="w-full flex">
-            
-
-
             <div className='w-[60%]'>
                 {renderCustomHeader()}
                 <Calendar cellRender={cellRender}  value={currentDate}
@@ -265,8 +241,8 @@ const items = [
        
                 headerRender={()=>null}  />
             </div>
-            <div className='ml-[60px]'>
-                <Tabs defaultActiveKey="1"   className="custom-no-underline-tabs"  items={items} onChange={onChange} />
+            <div className='ml-[60px] w-[36%]'>
+                <Tabs defaultActiveKey="1"   className="custom-no-underline-tabs"  items={items}  />
             </div>
 
         </div>

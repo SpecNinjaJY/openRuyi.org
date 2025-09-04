@@ -21,21 +21,21 @@ const CommunityCarousel = () => {
       imageUrl: GroupSvg,
       link: '/community'
     },
-    {
-      id: 2,
-      titleKey: 'carousel.title2',
-      descriptionKey: 'carousel.desc2',
+    // {
+    //   id: 2,
+    //   titleKey: 'carousel.title2',
+    //   descriptionKey: 'carousel.desc2',
 
-      imageUrl: 'https://picsum.photos/id/2/1600/800',
-      link: '/projects'
-    },
-    {
-      id: 3,
-      titleKey: 'carousel.title3',
-      descriptionKey: 'carousel.desc3',
-      imageUrl: 'https://picsum.photos/id/3/1600/800',
-      link: '/events'
-    }
+    //   imageUrl: 'https://picsum.photos/id/2/1600/800',
+    //   link: '/projects'
+    // },
+    // {
+    //   id: 3,
+    //   titleKey: 'carousel.title3',
+    //   descriptionKey: 'carousel.desc3',
+    //   imageUrl: 'https://picsum.photos/id/3/1600/800',
+    //   link: '/events'
+    // }
   ];
 
   // 处理轮播变化
@@ -68,7 +68,7 @@ const CommunityCarousel = () => {
   }, []);
 
   return (
-    <div className="relative overflow-hidden shadow-lg h-[450px]">
+    <div className="relative overflow-hidden h-[450px]">
       {/* 轮播组件 */}
       <Carousel
         autoplay={false} // 已通过useEffect实现更可控的自动播放
@@ -89,7 +89,7 @@ const CommunityCarousel = () => {
               }}
             >
               {/* 渐变遮罩，提升文字可读性 */}
-              <div className="h-full absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/30 md:from-black/60 md:via-black/30 md:to-transparent"></div>
+              <div className="h-full absolute inset-0"></div>
             </div>
             
             {/* 轮播内容 */}

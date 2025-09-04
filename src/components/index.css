@@ -34,9 +34,9 @@
   background-color: #fff;
 }
 
-/* .ant-select-selector{
-  border:none !important
-} */
+.ant-select-selector{
+  border-radius: 4px !important;
+}
 
 /* 鼠标点击时移除边框，键盘聚焦时保留自定义阴影 */
 .ant-btn:focus:not(:focus-visible) {
@@ -76,6 +76,43 @@ button:focus-visible {
 
 .ant-layout-footer{
   padding:0px 
+}
+
+
+.custom-calendar {
+  /* 穿透样式隔离：定位 antd 日期单元格的 hover 状态 */
+  .ant-picker-cell{
+    /* 正常状态：可选调整单元格内边距（默认内边距较小，可放大交互区域） */
+    .ant-picker-cell-inner {
+      border-radius: 4px; /* 可选：给单元格添加轻微圆角 */
+      transition: background-color 0.2s ease; /* 悬浮颜色过渡，更流畅 */
+        font-size: 18px !important; 
+    }
+
+    /* 鼠标悬浮状态：修改背景色（核心样式） */
+    &:hover:not(.ant-picker-cell-disabled) .ant-picker-cell-inner {
+      background-color: #bae0ff !important; /* 自定义悬浮背景色（示例：浅蓝色） */
+    }
+
+    /* 3. 可选：自定义「今天」的悬浮样式（避免与默认今天样式冲突） */
+    &.ant-picker-cell-today:hover .ant-picker-cell-inner {
+      background-color: #bae0ff !important; /* 今天悬浮时背景色（比普通悬浮色深一点） */
+     
+    }
+
+    /* 4. 可选：禁用日期的悬浮样式（避免禁用日期仍有 hover 效果） */
+    &.ant-picker-cell-disabled:hover .ant-picker-cell-inner {
+      background-color: transparent !important; /* 禁用日期悬浮时无背景 */
+      color: rgba(0, 0, 0, 0.25) !important; /* 禁用日期文字颜色（保持默认） */
+      cursor: not-allowed; /* 禁用鼠标指针 */
+    }
+
+    /* 5. 可选：选中日期的悬浮样式（若需区分选中与悬浮） */
+    &.ant-picker-cell-selected:hover .ant-picker-cell-inner {
+      background-color: #bae0ff !important; /* 选中状态悬浮时保持选中背景色 */
+      
+    }
+  }
 }
 
 
