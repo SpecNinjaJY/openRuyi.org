@@ -3,9 +3,11 @@ import group1 from '@/assets/home/other1.svg'
 import group2 from '@/assets/home/other2.svg'
 import group3 from '@/assets/home/other3.svg'
 import group4 from '@/assets/home/other4.svg'
+import { useLanguage } from '../../contexts/LanguageContext';
 
 
 const MasonryGallery = () => {
+    const { t } = useLanguage();
   // 1. 使用 useMemo 缓存图片数据，避免每次渲染创建新引用
   const imageData = useMemo(() => [
     { id: 1, url: group1, alt: '照片1' },
@@ -17,18 +19,31 @@ const MasonryGallery = () => {
 
 
   return (
-    <div className="mx-auto flex container gap-4 cursor-pointer">
+    <div className="flex container justify-between gap-8 ">
 
-            {imageData.map((image) => <div 
+            {imageData.map((image,id) => <div 
                   key={image.id}
-                  className="rounded-lg overflow-hidden transform transition-all duration-100 hover:shadow-md hover:border-[2px] hover:border-[#0062ff]"
-                >
+                  className="w-1/4 relative border-2 rounded-md shadow-md border-transparent transition-all duration-200 hover:border-[#0062ff] cursor-pointer"
+                  style={{cursor:id>2 && 'not-allowed',border:id>2&& 'none'}}
+                  >
+                  
                   <img
                     src={image.url}
                     alt={image.alt}
                     className="w-full object-cover"
                    
                   />
+                  {id<=2?<>
+                    <div className='text-[#333] text-[24px] absolute top-10 left-10'>
+                    {t(`child${id+1}.0`)}
+                  </div>
+                   <div className='text-[#333] text-[14px] absolute top-[80px] left-10'>
+                    {t(`child${id+1}.1`)}
+                  </div>
+                  </>:<>
+                    <div className='text-[#999] text-[24px] absolute top-10 left-10'>{t('wait')}</div>
+                  </>}
+                  
                 </div>
               
             ) 

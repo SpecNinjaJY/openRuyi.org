@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Carousel, Button, Typography, Row, Col } from 'antd';
-import { ArrowRightOutlined } from '@ant-design/icons';
-import { useLanguage } from '../../contexts/LanguageContext';
+import { Carousel, Typography} from 'antd';
+import { useLanguage } from '../../contexts/languageContext';
 import GroupSvg from '@/assets/home/group.svg';
 
 const { Title, Paragraph } = Typography;
@@ -89,19 +88,17 @@ const CommunityCarousel = () => {
               }}
             >
               {/* 渐变遮罩，提升文字可读性 */}
-              <div className="h-full absolute inset-0"></div>
+              <div className="h-full absolute inset-0 text-[#1F4697] text-[60px] font-bold top-10 left-10">
+                {t('name')}
+              </div>
+               <div className="h-full absolute inset-0 text-[#1F4697] text-[24px] top-1/3 left-10">
+                {t('namedes')}
+              </div>
             </div>
             
             {/* 轮播内容 */}
             <div className="relative h-full flex items-center">
               <div className="container mx-auto px-6 md:px-12 h-[450px]">
-                
-                   
-                    
-                    
-         
-                
-                  
               </div>
             </div>
           </div>

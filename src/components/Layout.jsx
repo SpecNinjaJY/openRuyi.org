@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Outlet, Link } from 'react-router-dom';
 import { Layout } from 'antd';
-import Footer from './Footer';
+import Footer from './footer';
 import LogoSvg from '@/assets/home/logo.svg';
-import { useLanguage } from '../contexts/LanguageContext';
+import { useLanguage } from '../contexts/languageContext';
 import './index.css'
 // import Search from './Search';
 
@@ -36,14 +36,10 @@ const LayoutComponent = () => {
             <Link to={t.path}>
               {t.text}
             </Link>
-            
-            
             </li>
           )}</ul>
 
         <div>
-
-
         </div>
         
       </AntHeader>

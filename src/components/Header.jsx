@@ -5,8 +5,8 @@ import {
   MenuOutlined, 
   SearchOutlined
 } from '@ant-design/icons';
-import LanguageSwitch from './LanguageSwitch';
-import { useLanguage } from '../contexts/LanguageContext';
+import LanguageSwitch from './languageSwitch';
+import { useLanguage } from '../contexts/languageContext';
 
 
 const Header = ({ isScrolled, mobileMenuOpen, setMobileMenuOpen, searchOpen, setSearchOpen }) => {

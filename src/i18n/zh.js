@@ -9,19 +9,19 @@ export default {
     { text: '学习', path: '/learning' },
      { text: '下载', path: '/download' },
   ],
-  // 导航栏
-  home: '首页',
-  develop: '开发',
-  news: '新闻动态',
-  technology: '技术',
-  learning: '任务学习',
-  joinNow: '立即加入',
-  
+
+  name:'openRuyi Community',
+  namedes:'构建以 RISC-V 架构为中心的、面向 RISC-V 指令集新扩展与微架构新特性的 RISC-V 原生操作系统社区',
+
   // 首页区
   heroTitle: '如意系列',
   heroSubtitle: 'openRuyi 社区开源项目',
-  getStarted: '开始探索',
-  exploreProjects: '浏览项目',
+
+  child1:['openRuyi','如意操作系统'],
+  child2:['RuyiSDK','如意开发工具集'],
+  child3:['RVCK','如意内核同源工程'],
+  wait:'敬请期待',
+
 
   //赞助方
   

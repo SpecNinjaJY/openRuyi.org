@@ -1,7 +1,7 @@
 import React from 'react';
 import { Dropdown, Menu, Avatar } from 'antd';
 import { GlobalOutlined } from '@ant-design/icons';
-import { useLanguage } from '../contexts/LanguageContext';
+import { useLanguage } from '../contexts/languageContext';
 
 const LanguageSwitch = () => {
   const { language, changeLanguage } = useLanguage();

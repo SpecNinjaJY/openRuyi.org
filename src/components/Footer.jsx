@@ -10,7 +10,7 @@ import {
   ArrowRightOutlined,
   UserOutlined
 } from '@ant-design/icons';
-import { useLanguage } from '../contexts/LanguageContext';
+import { useLanguage } from '../contexts/languageContext';
 import LogoSvg from '@/assets/home/logo.svg';
 
 const { Text, Title, Paragraph } = Typography;
@@ -66,11 +66,8 @@ const Footer = () => {
 
 
         <div className='text-[#333] text-[20px] mt-[100px] font-semibold'>{t('subscribeMes')}</div>
-
-        <div className='text-[#666] text-[16px] w-[55%] mt-10 leading-[30px]'>{t('subnotify')}</div>
-      
         
-       
+        <div className='text-[#666] text-[16px] w-[55%] mt-10 leading-[30px]'>{t('subnotify')}</div>
 
          {/* 订阅区域 */}
         <div className="mb-12 bg-primary/5 rounded-2xl py-8 md:py-10">
