@@ -1,13 +1,13 @@
 export default {
   // menulist:['项目','开发','动态','技术','任务','学习'],
   menulist:[
-    { text: '项目', path: '/' },
-    { text: '开发', path: null },
-    { text: '动态', path: '/news' },
-    { text: '技术', path: null },
-    { text: '任务', path: null },
-    { text: '学习', path: null },
-     { text: '下载', path: '/download' },
+    { text: '项目', key:'project', path: '/' },
+    { text: '开发',key:'develop', path: null },
+    { text: '动态', key:'news',  path: '/news' },
+    { text: '技术', key:'tech',path: null },
+    { text: '任务', key:'task',path: null },
+    { text: '学习', key:'learning', path: null },
+     { text: '下载', key:'download', path: '/download' },
   ],
 
   name:'openRuyi Community',
