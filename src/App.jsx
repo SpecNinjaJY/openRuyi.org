@@ -1,10 +1,12 @@
 import React from 'react';
 import { ConfigProvider } from 'antd';
 import Router from './router';
+import zhCN from 'antd/locale/zh_CN';
+
 
 function App() {
   return (
-    <ConfigProvider
+    <ConfigProvider locale={zhCN}
       theme={{
         token: {
           colorPrimary: '#165DFF',
@@ -12,7 +14,7 @@ function App() {
         },
         components: {
           Button: {
-            borderRadius: 6,
+            borderRadius: 4,
           },
           Card: {
             borderRadius: 8,

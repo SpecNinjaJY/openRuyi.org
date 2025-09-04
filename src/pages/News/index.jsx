@@ -1,6 +1,6 @@
 
 import LogoSvg from '@/assets/news/newsbanner.svg';
-import { useLanguage } from '../../contexts/LanguageContext';
+import { useLanguage } from '../../contexts/languageContext';
 import { 
   Layout, Card, Input, Select, DatePicker, Pagination, 
   Typography, Space, Row, Col, Tag, Divider 
@@ -269,13 +269,13 @@ const News = () =>{
             </div>
             <div className="container px-4 flex flex-wrap items-baseline justify-between">
                          {getCurrentPageData().length > 0 ? (
-            <div className="space-y-4 w-full">
+            <div className="space-y-10 w-full">
               {getCurrentPageData().map((news,index) => (
                
-                  <Row key={index} gutter={[24, 16]} className='mt-10 cursor-pointer'>
+                  <Row key={index} gutter={[24, 16]} className='mt-10 cursor-pointer group'>
                     <Col xs={24} md={18}>
                       {/* 新闻标题 */}
-                      <Title level={5} style={{fontSize:22,fontWeight:500}} className=" mb-4 text-[#333] hover:text-[#0062ff] cursor-pointer transition-colors">
+                      <Title level={5} style={{fontSize:22,fontWeight:500}} className=" mb-4 text-[#333] group-hover:text-[#0062ff] cursor-pointer transition-colors">
                         {news.title}
                       </Title>
 
@@ -286,7 +286,7 @@ const News = () =>{
                       </Space>
                       
                       {/* 新闻摘要 */}
-                      <Text className="text-[#666] text-[16px] line-clamp-3 mb-4 block">
+                      <Text className="text-[#666] text-[16px] line-clamp-3 mb-4 block group-hover:text-[#61a0ff]">
                         {news.content}
                       </Text>
                       
@@ -294,15 +294,15 @@ const News = () =>{
                       <Space size="small" >
                         
                         <Space size="middle" className="flex items-center">
-                          <Text className="text-[14px] text-[#666]">{getAuthorName(news.author)}</Text>
+                          <Text className="text-[14px] text-[#666] group-hover:text-[#61a0ff]">{getAuthorName(news.author)}</Text>
                         </Space>
 
                         <Space size="middle" className="flex items-center">
-                            <span className="text-[14px] text-[#666] h-3">{'|'}</span>
+                            <span className="text-[14px] text-[#666] h-3 group-hover:text-[#61a0ff]">{'|'}</span>
                         </Space>
 
                         <Space size="middle" className="flex items-center">  
-                          <Text className="text-[14px] text-[#666]">{formatDate(news.publishTime)}</Text>
+                          <Text className="text-[14px] text-[#666] group-hover:text-[#61a0ff]">{formatDate(news.publishTime)}</Text>
                         </Space>
                        
                       </Space>
@@ -311,7 +311,7 @@ const News = () =>{
                     {/* 新闻缩略图（仅在中等屏幕以上显示） */}
                     <Col xs={0} md={6}>
                       <div 
-                        className="w-full h-[200px] bg-cover bg-center rounded-md"
+                        className="w-full h-[200px] bg-cover bg-center rounded-sm"
                         style={{ 
                           backgroundImage: `url(https://picsum.photos/id/${(news.id.slice(-2) % 100) + 10}/400/300)`,
                           boxShadow: '0 1px 3px rgba(0,0,0,0.1)'

@@ -97,7 +97,7 @@ const data = [
   },
 ];
 
-    return <div className="bg-[#f6f9ff] py-10">
+    return <div className="bg-[#f6f9ff] pb-10">
          {contextHolder}
          <div className='relative'>
             <img src={downloadbanner} className='w-full'/>

@@ -3,9 +3,9 @@ import { Button, Calendar,Flex,Select,Tabs  } from 'antd';
 import dayjs from 'dayjs';
 import { LeftOutlined, RightOutlined } from '@ant-design/icons';
 import '../index.css'
-import { useLanguage } from '../../contexts/LanguageContext';
+import { useLanguage } from '../../contexts/languageContext';
 import MeetingAccordion from './MeetingAccordion';
-
+import zhCN from 'antd/locale/zh_CN';
 const meetings = [
     {
     id: 'm1',
@@ -231,10 +231,9 @@ const items = [
         <div className="w-full flex">
             <div className='w-[60%]'>
                 {renderCustomHeader()}
-                <Calendar cellRender={cellRender}  value={currentDate}
+                <Calendar locale={zhCN} cellRender={cellRender}  value={currentDate}
                     className="custom-calendar"
                     onSelect={(date) => {
-                    console.log('选中的日期：', date.format('YYYY-MM-DD'));
                     // 可选：选中日期后，保持当前月份不变（仅更新日期）
                     setCurrentDate(date);
                     }}

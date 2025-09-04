@@ -2,11 +2,11 @@ export default {
   // menulist:['项目','开发','动态','技术','任务','学习'],
   menulist:[
     { text: '项目', path: '/' },
-    { text: '开发', path: '/privacy-policy' },
+    { text: '开发', path: null },
     { text: '动态', path: '/news' },
-    { text: '技术', path: '/about-us' },
-    { text: '任务', path: '/about-us' },
-    { text: '学习', path: '/learning' },
+    { text: '技术', path: null },
+    { text: '任务', path: null },
+    { text: '学习', path: null },
      { text: '下载', path: '/download' },
   ],
 
@@ -34,6 +34,7 @@ export default {
   viewAll: '查看更多',
   
   // 最新动态
+  news:'新闻动态',
   latestNews: '动态速览',
   latestNewsDesc: '聚合 RISC-V 技术进展、行业动态等重要信息',
   moreNews: '全部动态',

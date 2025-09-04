@@ -1,0 +1,114 @@
+/* 基础导航布局 */
+.top-nav .nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* 1. 点击跳转项样式 */
+.nav-link {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.nav-link-content {
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  height: 100%;
+  border-radius: 4px;
+  color: rgba(0, 0, 0, 0.88);
+  transition: background-color 0.2s ease;
+  text-decoration: none;
+}
+
+.nav-link-content:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+}
+
+/* 2. 悬浮抽屉项样式 */
+.nav-dropdown {
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.nav-dropdown-trigger {
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  height: 100%;
+  border-radius: 4px;
+  color: rgba(0, 0, 0, 0.88);
+  transition: background-color 0.2s ease;
+}
+
+.nav-dropdown:hover .nav-dropdown-trigger {
+  background-color: rgba(0, 0, 0, 0.04);
+}
+
+/* 3. 抽屉动画核心样式 */
+.nav-dropdown-content {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  border-radius: 0 0 8px 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  overflow: hidden;
+  z-index: 100;
+  /* 初始隐藏状态：max-h=0 + 透明 + 无内边距 */
+  max-height: 0;
+  opacity: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+/* 抽屉展开状态：max-h足够大（容纳内容）+ 不透明 + 内边距 */
+.dropdown-open {
+  max-height: 400px; /* 根据内容调整，确保覆盖所有情况 */
+  opacity: 1;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+/* 抽屉过渡动画：统一控制所有变化属性，确保丝滑 */
+.dropdown-transition {
+  transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out, padding 0.3s ease-in-out;
+}
+
+/* 4. 抽屉内部项样式 */
+.dropdown-item {
+  display: block;
+  padding: 8px 16px;
+  color: rgba(0, 0, 0, 0.88);
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+  text-decoration: none;
+}
+
+.dropdown-item:hover {
+  background-color: #e6f4ff; /* antd蓝色系hover色，保持风格统一 */
+  color: #1890ff;
+}
+
+/* 5. 响应式适配：移动端隐藏抽屉，改为点击展开（可选） */
+@media (max-width: 768px) {
+  .nav-dropdown-content {
+    position: static;
+    width: 100%;
+    box-shadow: none;
+    border: 1px solid #f0f0f0;
+    border-radius: 4px;
+    margin-top: 8px;
+  }
+
+  /* 移动端需改为点击展开，需额外添加点击事件逻辑（替换hover） */
+  .nav-dropdown {
+    onMouseEnter: null;
+    onMouseLeave: null;
+  }
+}
