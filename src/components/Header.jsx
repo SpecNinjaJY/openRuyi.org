@@ -14,13 +14,8 @@ const Header = ({ isScrolled, mobileMenuOpen, setMobileMenuOpen, searchOpen, set
   
   return (
     <div className="flex items-center justify-between h-16">
-      {/* Logo */}
-      <div className="flex items-center">
-          
-      </div>
-      
-      {/* 桌面端导航 */}
-      
+     
+       
       
       {/* 操作区 */}
       <div className="flex items-center space-x-3">

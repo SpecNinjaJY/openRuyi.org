@@ -1,9 +1,9 @@
-import { useEffect, useState, useMemo } from 'react';
+import { useMemo } from 'react';
 import group1 from '@/assets/home/other1.svg'
 import group2 from '@/assets/home/other2.svg'
 import group3 from '@/assets/home/other3.svg'
 import group4 from '@/assets/home/other4.svg'
-import { useLanguage } from '../../contexts/LanguageContext';
+import { useLanguage } from '../../contexts/languageContext';
 
 
 const MasonryGallery = () => {
@@ -23,7 +23,7 @@ const MasonryGallery = () => {
 
             {imageData.map((image,id) => <div 
                   key={image.id}
-                  className="w-1/4 relative border-2 rounded-md shadow-md border-transparent transition-all duration-200 hover:border-[#0062ff] cursor-pointer"
+                  className="w-1/4 relative border-2 rounded-md border-transparent transition-all duration-200 hover:border-[#0062ff] cursor-pointer"
                   style={{cursor:id>2 && 'not-allowed',border:id>2&& 'none'}}
                   >
                   

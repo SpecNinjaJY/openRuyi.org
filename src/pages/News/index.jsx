@@ -210,6 +210,7 @@ const News = () =>{
                         placeholder="输入标题或内容关键词"
                         value={filterParams.searchKey}
                         onChange={(e) => handleFilterChange('searchKey', e.target.value)}
+                        allowClear
                         onPressEnter={() => {}}
                         prefix={<SearchOutlined />}
                         />

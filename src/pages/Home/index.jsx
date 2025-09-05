@@ -8,6 +8,7 @@ import NewItem from '../../components/home/NewsItem';
 import ActivityArrange from '../../components/home/Arrange';
 import './index.css'
 import cbg from '@/assets/home/calendarbg.svg'
+import { useNavigate } from 'react-router-dom';
 
 // 模拟最新动态数据
 const latestNews = [
@@ -64,7 +65,7 @@ const latestNews = [
 
 const Home = () => {
   const { t } = useLanguage();
-  
+  const navigate = useNavigate(); // 路由导航
   return (
     <div className="space-b-16">
       <CommunityCarousel/>
@@ -73,10 +74,10 @@ const Home = () => {
       <section className="py-12 bg-[#f6f9ff]">
         <div className="container px-4 flex items-baseline justify-between">
           <HomeTitle title1={t('heroTitle')} title2={t('heroSubtitle')} />
-          <span className='text-[#0062ff] cursor-pointer flex items-center justify-center'>
+          {/* <span className='text-[#0062ff] cursor-pointer flex items-center justify-center'>
             <span>{t('viewAll')}</span>
             <img src={Arrow} className='mb-[2px]'/>
-          </span>
+          </span> */}
         </div>
         <MasonryGallery/>
 
@@ -86,7 +87,7 @@ const Home = () => {
       <section className="pt-12 bg-[#f6f9ff]">
         <div className="container px-4 flex justify-between">
           <HomeTitle title1={t('latestNews')} title2={t('latestNewsDesc')} />
-          <span className='text-[#0062ff] cursor-pointer flex items-center justify-center'>
+          <span className='text-[#0062ff] cursor-pointer flex items-center justify-center' onClick={()=>navigate('/news')}>
             <span>{t('moreNews')}</span>
             <img src={Arrow} className='mb-[2px]'/>
           </span>

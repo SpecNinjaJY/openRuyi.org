@@ -5,7 +5,7 @@ const NewItem = (props) =>{
     const {title,url,desc,date,type,id} = props
       const navigate = useNavigate(); // 路由导航
     return (
-        <div className="flex mt-8 w-[48%] cursor-pointer hover:shadow-md p-4 rounded-md" onClick={()=>navigate(`/newsdetail/news-${id+1}`,{state:{fromHome:true}})}>
+        <div className="flex mt-8 w-[48%] cursor-pointer p-4 rounded-md" onClick={()=>navigate(`/newsdetail/news-${id+1}`,{state:{fromHome:true}})}>
             <div className="w-2/3 flex flex-col justify-between group">
                 <div className="text-[#333] text-[16px] two-line-ellipsis group-hover:text-[#0062ff]">
                     {title}

@@ -105,16 +105,16 @@ const data = [
             <span className="absolute left-[60px] top-1/2 text-[14px] text-[#333] mt-5">{t('downsubtl')}</span>
         </div>
 
-        <div className="container flex justify-between mt-10 mb-[60px]">
+        {/* <div className="container flex justify-between mt-10 mb-[60px]">
             <div onClick={()=>setActive(1)} className={`w-[49%] bg-white h-16 flex items-center transition-colors justify-center text-[#666] text-[16px] cursor-pointer rounded-lg typeBtn ${activeBtn === 1 ? 'isActive':''}`}>
                 {'openRuyiOS'}
             </div>
             <div  onClick={()=>setActive(2)} className="w-[49%] bg-white h-16 flex items-center transition-colors justify-center text-[#666] text-[16px] cursor-pointer rounded-lg typeBtn">
                 {'RuyiSDK'}
             </div>
-        </div>
+        </div> */}
 
-        <div className="container">
+        <div className="container mt-[80px]">
             <div className="text-black font-medium text-[20px] mb-6">{t('title1')}</div>
             <div className="bg-white rounded-lg  p-4 flex flex-col mb-5">
                 <span className="text-[16px] text-[#333]">{t('t1subs1')}</span>
