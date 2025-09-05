@@ -1,5 +1,5 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { Outlet, Link } from 'react-router-dom';
+import React, { useState, useRef, useEffect } from 'react';
+import { Outlet, Link, useLocation } from 'react-router-dom';
 import { Layout } from 'antd';
 import Footer from './footer';
 import LogoSvg from '@/assets/home/logo.svg';
@@ -13,12 +13,10 @@ import ScrollToTop from './ScrollToTop';
 const { Header: AntHeader, Content, Footer: AntFooter } = Layout;
 
 const LayoutComponent = () => {
-
-  const [activeKey, setActiveKey] = useState(null);
-    const closeTimerRef = useRef(null);
-      const dropdownRefs = useRef({});
+  const location = useLocation();
+  const [activeKey, setActiveKey] = useState('project');
+  const closeTimerRef = useRef(null);
   const { t } = useLanguage();
-
 
   const isDropdonw = () =>{
     return ['develop','tech','task','learning'].includes(activeKey)
@@ -27,12 +25,19 @@ const LayoutComponent = () => {
 
    // 路由变化时关闭所有抽屉
     useEffect(() => {
-      setActiveKey(null);
-      // 清除未执行的延迟计时器
-      if (closeTimerRef.current) {
-        clearTimeout(closeTimerRef.current);
-      }
-      // 组件卸载时清除计时器
+         if(location.pathname == '/'){
+             setActiveKey('project');
+          }
+          else if(location.pathname == '/news'|| location.pathname.includes('newsdetail')){
+            setActiveKey('news')
+          }
+          else if(location.pathname == '/download'){
+            setActiveKey('download')
+          }
+          else {
+              setActiveKey(null);
+          }
+
       return () => {
         if (closeTimerRef.current) {
           clearTimeout(closeTimerRef.current);
@@ -47,34 +52,55 @@ const LayoutComponent = () => {
       if (closeTimerRef.current) {
         clearTimeout(closeTimerRef.current);
       }
-      // 展开当前抽屉（无需关闭其他，后续离开时自动关闭）
+     
       setActiveKey(key);
     };
   
     // 2. 鼠标离开导航项（延迟关闭抽屉，给时间进入抽屉）
     const handleMouseLeave = (key) => {
-      // 延迟150ms关闭：足够用户从导航项滑到抽屉
       closeTimerRef.current = setTimeout(() => {
-        // 检查鼠标是否已进入当前抽屉：若在抽屉内，不关闭
-        const isMouseInDropdown = dropdownRefs.current[key]?.matches(':hover');
-        if (!isMouseInDropdown) {
-          setActiveKey(null);
-        }
-      }, 150);
+        console.log(location.pathname)
+          if(location.pathname == '/'){
+             setActiveKey('project');
+          }
+          else if(location.pathname == '/news'|| location.pathname.includes('newsdetail')){
+            setActiveKey('news')
+          }
+          else if(location.pathname == '/download'){
+            setActiveKey('download')
+          }
+          else {
+              setActiveKey(null);
+          }
+        
+        //}
+      }, 200);
     };
   
-    // 3. 鼠标进入抽屉（保持抽屉展开）
     const handleDropdownMouseEnter = () => {
       // 清除延迟关闭计时器，避免抽屉被误关
       if (closeTimerRef.current) {
         clearTimeout(closeTimerRef.current);
       }
     };
-  
-    // 4. 鼠标离开抽屉（关闭抽屉）
+
     const handleDropdownMouseLeave = () => {
-      setActiveKey(null);
+       if(location.pathname == '/'){
+             setActiveKey('project');
+          }
+          else if(location.pathname == '/news'|| location.pathname.includes('newsdetail')){
+            setActiveKey('news')
+          }
+          else if(location.pathname == '/download'){
+            setActiveKey('download')
+          }
+          else {
+              setActiveKey(null);
+          }
+        
     };
+
+    console.log(activeKey)
 
   return (
     <Layout className="min-h-screen flex flex-col">
@@ -89,14 +115,14 @@ const LayoutComponent = () => {
       
         <ul className="flex list-none flex-wrap text-[16px] gap-8 md:gap-16">{t('menulist', { returnObjects: true })?.map((t,index)=>
           <li key={index}  onMouseEnter={() => handleMouseEnter(t.key)} onMouseLeave={() => handleMouseLeave(t.key)} >
-            <Link to={t.path}  style={{cursor: isDropdonw() ? 'default':'pointer'}}>
+            <Link to={t.path}  style={{color:activeKey == t.key? '#0062ff':'#333', cursor: isDropdonw() ? 'default':'pointer'}}>
               {t.text}
             </Link>
             </li>
           )}</ul>
 
         {isDropdonw() && <div  
-          className='bg-white w-full pt-6 px-12 h-[350px] absolute top-[74px] left-0 transition-all duration-300 translate-y-0 ease-in-out'
+          className='bg-white w-full pt-6 px-12 h-[350px] absolute top-[74px] left-0'
             onMouseEnter={handleDropdownMouseEnter} onMouseLeave={handleDropdownMouseLeave}
           >
             <DropMenu/>

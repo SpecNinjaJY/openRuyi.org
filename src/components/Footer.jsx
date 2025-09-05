@@ -87,9 +87,9 @@ const Footer = () => {
                 />
                 <Button 
                   color="primary"  variant="outlined"
-                  className="bg-primary hover:bg-primary/90 rounded"
+                  className="bg-primary hover:bg-primary/90 rounded-sm w-[180px]"
                 >
-                  {t('subscribe')} <ArrowRightOutlined className="ml-1" />
+                  {t('subscribe')}
                 </Button>
               </div>
             </Col>
