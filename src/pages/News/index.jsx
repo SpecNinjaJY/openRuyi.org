@@ -191,11 +191,6 @@ const News = () =>{
   };
 
 
-
-
-
-
-
     return <div className="space-b-16">
         <div className='relative'>
             <img src={LogoSvg} className='w-full'/>

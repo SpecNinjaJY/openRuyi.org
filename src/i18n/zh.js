@@ -1,5 +1,4 @@
 export default {
-  // menulist:['项目','开发','动态','技术','任务','学习'],
   menulist:[
     { text: '项目', key:'project', path: '/' },
     { text: '开发',key:'develop', path: null },
@@ -24,8 +23,6 @@ export default {
   child2:['RuyiSDK','如意开发工具集'],
   child3:['RVCK','如意内核同源工程'],
   wait:'敬请期待',
-
-
 
 
   //赞助方
@@ -74,8 +71,6 @@ export default {
 
   
   // 页脚
-  subscribeToUpdates: '订阅更新',
-  subscribeDescription: '获取最新的项目新闻、技术文章和社区活动',
   yourname:'姓名',
   yourEmail: '邮箱',
   subscribe: '立即订阅',
