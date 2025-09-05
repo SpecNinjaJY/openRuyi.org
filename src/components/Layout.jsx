@@ -13,22 +13,12 @@ import ScrollToTop from './ScrollToTop';
 const { Header: AntHeader, Content, Footer: AntFooter } = Layout;
 
 const LayoutComponent = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [searchOpen, setSearchOpen] = useState(false);
+
   const [activeKey, setActiveKey] = useState(null);
     const closeTimerRef = useRef(null);
       const dropdownRefs = useRef({});
   const { t } = useLanguage();
-  // 监听滚动事件，实现吸顶导航
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
-    };
-    
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+
 
   const isDropdonw = () =>{
     return ['develop','tech','task','learning'].includes(activeKey)

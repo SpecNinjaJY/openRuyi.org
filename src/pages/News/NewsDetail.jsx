@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, useNavigate, Link } from 'react-router-dom';
+import { useParams, useNavigate, Link, useLocation } from 'react-router-dom';
 import {  Breadcrumb, Typography, Button,  Space} from 'antd';
 import ReactMarkdown from 'react-markdown'; // Markdown解析库
 import remarkGfm from 'remark-gfm'; // 支持GFM（表格、删除线等）
+import { useLanguage } from '../../contexts/languageContext';
 
 
 // 解构组件
@@ -107,12 +108,15 @@ const mockNewsData = [
 ];
 
 const NewsDetail = () => {
+  const { t } = useLanguage();
   const { newsId } = useParams(); // 从路由获取当前新闻ID
   const navigate = useNavigate(); // 路由导航
   const [currentNews, setCurrentNews] = useState(null); // 当前新闻数据
   const [prevNews, setPrevNews] = useState(null); // 上一篇新闻
   const [nextNews, setNextNews] = useState(null); // 下一篇新闻
   const [loading, setLoading] = useState(true); // 加载状态
+
+  const { fromHome } = useLocation().state
 
   // 初始化：获取当前新闻及上下篇数据
   useEffect(() => {
@@ -156,8 +160,8 @@ const NewsDetail = () => {
           <Breadcrumb separator=">">
             {/* 一级：回到新闻列表页 */}
             <Breadcrumb.Item>
-              <Link to="/news" className="text-blue-600 hover:text-blue-800">
-                动态
+              <Link to={fromHome?"/" : "/news"} className="text-blue-600 hover:text-blue-800">
+                {fromHome?t('latestNews'):t('news')}
               </Link>
             </Breadcrumb.Item>
             {/* 二级：当前新闻标题（超出时省略） */}

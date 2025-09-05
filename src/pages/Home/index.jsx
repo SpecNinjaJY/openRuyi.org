@@ -93,7 +93,7 @@ const Home = () => {
         </div>
          <div className="container px-4 flex flex-wrap items-baseline justify-between">
              {
-              latestNews?.map((l,index)=><NewItem key={index} title={l.title} desc={l.desc} url={l.avatar} date={l.date} type={l.type} />)
+              latestNews?.map((l,index)=><NewItem key={index} id={index} title={l.title} desc={l.desc} url={l.avatar} date={l.date} type={l.type} />)
             }
          </div>
       </section>

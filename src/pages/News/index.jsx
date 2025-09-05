@@ -273,7 +273,7 @@ const News = () =>{
             <div className="space-y-10 w-full">
               {getCurrentPageData().map((news,index) => (
                
-                  <Row key={index} onClick={()=>navigate(`/newsdetail/${news.id}`, { replace: true })} gutter={[24, 16]} className='mt-10 cursor-pointer group'>
+                  <Row key={index} onClick={()=>navigate(`/newsdetail/${news.id}`, { replace: true,state:{fromHome:false} })} gutter={[24, 16]} className='mt-10 cursor-pointer group'>
                     <Col xs={24} md={18}>
                       {/* 新闻标题 */}
                       <Title level={5} style={{fontSize:22,fontWeight:500}} className=" mb-4 text-[#333] group-hover:text-[#0062ff] cursor-pointer transition-colors">
