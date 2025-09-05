@@ -146,7 +146,7 @@ const NewsDetail = () => {
   // 处理上下篇跳转
   const handleNav = (targetId) => {
     if (targetId) {
-      navigate(`/newsdetail/${targetId}`); // 跳转到目标新闻详情页
+      navigate(`/newsdetail/${targetId}`,{state:{fromHome:fromHome}}); // 跳转到目标新闻详情页
       window.scrollTo(0, 0); // 跳转后滚动到顶部
     }
   };
@@ -155,7 +155,7 @@ const NewsDetail = () => {
   return (
     loading || !currentNews ?<Title level={3} className="text-gray-600">加载中...</Title>:<div className="bg-[#f6f9ff]">
       {/* 1. 面包屑导航区域 */}
-      <div >
+      <div>
         <div className="container mx-auto px-4 h-16 flex items-center">
           <Breadcrumb separator=">">
             {/* 一级：回到新闻列表页 */}

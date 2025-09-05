@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Outlet, Link, useLocation } from 'react-router-dom';
-import { Layout } from 'antd';
+import { Drawer, Layout } from 'antd';
 import Footer from './footer';
 import LogoSvg from '@/assets/home/logo.svg';
 import { useLanguage } from '../contexts/languageContext';
@@ -14,21 +14,18 @@ const { Header: AntHeader, Content, Footer: AntFooter } = Layout;
 
 const LayoutComponent = () => {
   const location = useLocation();
-  const [activeKey, setActiveKey] = useState('project');
+  const [activeKey, setActiveKey] = useState();
   const closeTimerRef = useRef(null);
   const { t } = useLanguage();
 
   const isDropdonw = () =>{
-    return ['develop','tech','task','learning'].includes(activeKey)
+    return ['project','develop','tech','task','learning'].includes(activeKey)
   }
 
 
    // 路由变化时关闭所有抽屉
     useEffect(() => {
-         if(location.pathname == '/'){
-             setActiveKey('project');
-          }
-          else if(location.pathname == '/news'|| location.pathname.includes('newsdetail')){
+          if(location.pathname == '/news'|| location.pathname.includes('newsdetail')){
             setActiveKey('news')
           }
           else if(location.pathname == '/download'){
@@ -59,11 +56,8 @@ const LayoutComponent = () => {
     // 2. 鼠标离开导航项（延迟关闭抽屉，给时间进入抽屉）
     const handleMouseLeave = (key) => {
       closeTimerRef.current = setTimeout(() => {
-        console.log(location.pathname)
-          if(location.pathname == '/'){
-             setActiveKey('project');
-          }
-          else if(location.pathname == '/news'|| location.pathname.includes('newsdetail')){
+
+           if(location.pathname == '/news'|| location.pathname.includes('newsdetail')){
             setActiveKey('news')
           }
           else if(location.pathname == '/download'){
@@ -85,10 +79,7 @@ const LayoutComponent = () => {
     };
 
     const handleDropdownMouseLeave = () => {
-       if(location.pathname == '/'){
-             setActiveKey('project');
-          }
-          else if(location.pathname == '/news'|| location.pathname.includes('newsdetail')){
+          if(location.pathname == '/news'|| location.pathname.includes('newsdetail')){
             setActiveKey('news')
           }
           else if(location.pathname == '/download'){
@@ -121,12 +112,31 @@ const LayoutComponent = () => {
             </li>
           )}</ul>
 
-        {isDropdonw() && <div  
-          className='bg-white w-full pt-6 px-12 h-[350px] absolute top-[74px] left-0'
-            onMouseEnter={handleDropdownMouseEnter} onMouseLeave={handleDropdownMouseLeave}
+        {
+            <Drawer
+     
+            placement={'top'}
+            open={isDropdonw()}
+            //open={true}
+            onClose={handleMouseLeave}
+            mask={false} // 关闭遮罩，避免遮挡页面（可根据需求开启）
+    
+            className="transition-all duration-300" // 增强过渡动画
+            onMouseEnter={handleDropdownMouseEnter}
+            onMouseLeave={handleDropdownMouseLeave}
           >
-            <DropMenu/>
-        </div>}
+             <DropMenu activeKey={activeKey}/>
+
+          </Drawer>
+        
+        // isDropdonw() && <div  
+        //   className='bg-white w-full pt-6 px-12 h-[350px] absolute top-[74px] left-0'
+        //     onMouseEnter={handleDropdownMouseEnter} onMouseLeave={handleDropdownMouseLeave}
+        //   >
+        //     <DropMenu/>
+        // </div>
+        
+        }
 
         <div>
           <SearchOutlined  style={{fontSize:20}}/>

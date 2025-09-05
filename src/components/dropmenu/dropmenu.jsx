@@ -4,7 +4,7 @@ import { useLanguage } from '../../contexts/languageContext';
 
 const DropMenu = () =>{
      const { t } = useLanguage();
-    return <div className='flex justify-around'>
+    return <div className='flex justify-around px-2'>
 
             <div className='w-1/6 '>
                 <span className="drop-title">{'openRuyiOS'}</span>

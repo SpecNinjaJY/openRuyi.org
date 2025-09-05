@@ -115,5 +115,30 @@ button:focus-visible {
   }
 }
 
+.ant-drawer-content-wrapper {
+  top: 74px !important; 
+  box-shadow: none !important;
+
+}
+
+.ant-drawer-header{
+  display: none !important;
+}
+
+.ant-drawer .ant-drawer-content {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.ant-drawer{
+  border:none !important;
+  outline: none !important;
+}
+
+
+
+
+
 
 
