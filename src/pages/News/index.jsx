@@ -11,7 +11,7 @@ import {
 } from '@ant-design/icons';
 import './index.css'
 import emptyLogo from '@/assets/news/empty.svg'
-
+import { useNavigate } from 'react-router-dom'
 
 const { Title, Text } = Typography;
 const { Option } = Select;
@@ -88,6 +88,7 @@ const generateMockNews = () => {
 
 const News = () =>{
     const { t } = useLanguage();
+     const navigate = useNavigate()
      // 状态管理
   const [newsList, setNewsList] = useState([]); // 全部新闻数据
   const [filteredNews, setFilteredNews] = useState([]); // 筛选后新闻
@@ -272,7 +273,7 @@ const News = () =>{
             <div className="space-y-10 w-full">
               {getCurrentPageData().map((news,index) => (
                
-                  <Row key={index} gutter={[24, 16]} className='mt-10 cursor-pointer group'>
+                  <Row key={index} onClick={()=>navigate(`/newsdetail/${news.id}`, { replace: true })} gutter={[24, 16]} className='mt-10 cursor-pointer group'>
                     <Col xs={24} md={18}>
                       {/* 新闻标题 */}
                       <Title level={5} style={{fontSize:22,fontWeight:500}} className=" mb-4 text-[#333] group-hover:text-[#0062ff] cursor-pointer transition-colors">

@@ -5,7 +5,9 @@ import Footer from './footer';
 import LogoSvg from '@/assets/home/logo.svg';
 import { useLanguage } from '../contexts/languageContext';
 import './index.css'
-import TopNav from './topNav';
+import DropMenu from './dropmenu/dropmenu';
+import { SearchOutlined } from '@ant-design/icons';
+import ScrollToTop from './ScrollToTop';
 // import Search from './Search';
 
 const { Header: AntHeader, Content, Footer: AntFooter } = Layout;
@@ -84,32 +86,36 @@ const LayoutComponent = () => {
       setActiveKey(null);
     };
 
-    console.log(isDropdonw())
-
   return (
     <Layout className="min-h-screen flex flex-col">
+      <ScrollToTop/>
       {/* 吸顶导航栏 */}
       <AntHeader 
-        className={`sticky top-0 z-50 transition-all duration-300 flex justify-between items-center relative`}
+        className={`sticky top-0 z-50 transition-all duration-300 flex justify-between items-center`}
       > 
         <Link to={'/'}>
             <img src={LogoSvg}/>
         </Link>
       
-        <ul className="flex list-none flex-wrap text-[18px] gap-8 md:gap-16">{t('menulist', { returnObjects: true })?.map((t,index)=>
-          <li className='menuItem' key={index}  onMouseEnter={() => handleMouseEnter(t.key)} onMouseLeave={() => handleMouseLeave(t.key)} >
-            <Link to={t.path}>
+        <ul className="flex list-none flex-wrap text-[16px] gap-8 md:gap-16">{t('menulist', { returnObjects: true })?.map((t,index)=>
+          <li key={index}  onMouseEnter={() => handleMouseEnter(t.key)} onMouseLeave={() => handleMouseLeave(t.key)} >
+            <Link to={t.path}  style={{cursor: isDropdonw() ? 'default':'pointer'}}>
               {t.text}
             </Link>
             </li>
           )}</ul>
 
-          
-          {/* <TopNav/> */}
-        {isDropdonw() && <div onMouseEnter={handleDropdownMouseEnter} onMouseLeave={handleDropdownMouseLeave} 
-          className='bg-white w-full  h-[300px] absolute top-[74px] left-0 transition-all duration-300 ease-in-out' >
-            11
+        {isDropdonw() && <div  
+          className='bg-white w-full pt-6 px-12 h-[350px] absolute top-[74px] left-0 transition-all duration-300 translate-y-0 ease-in-out'
+            onMouseEnter={handleDropdownMouseEnter} onMouseLeave={handleDropdownMouseLeave}
+          >
+            <DropMenu/>
         </div>}
+
+        <div>
+          <SearchOutlined  style={{fontSize:20}}/>
+
+        </div>
         
       </AntHeader>
 

@@ -7,11 +7,14 @@ export default {
     { text: '技术', key:'tech',path: null },
     { text: '任务', key:'task',path: null },
     { text: '学习', key:'learning', path: null },
-     { text: '下载', key:'download', path: '/download' },
+    { text: '下载', key:'download', path: '/download' },
   ],
 
   name:'openRuyi Community',
   namedes:'构建以 RISC-V 架构为中心的、面向 RISC-V 指令集新扩展与微架构新特性的 RISC-V 原生操作系统社区',
+
+  //下拉区域
+  more:'更多',
 
   // 首页区
   heroTitle: '如意系列',
@@ -21,6 +24,8 @@ export default {
   child2:['RuyiSDK','如意开发工具集'],
   child3:['RVCK','如意内核同源工程'],
   wait:'敬请期待',
+
+
 
 
   //赞助方
