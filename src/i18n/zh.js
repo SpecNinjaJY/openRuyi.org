@@ -4,8 +4,8 @@ export default {
     { text: '开发',key:'develop', path: null },
     { text: '动态', key:'news',  path: '/news' },
     { text: '技术', key:'tech',path: null },
-    { text: '任务', key:'task',path: null },
-    { text: '学习', key:'learning', path: null },
+    { text: '任务', key:'task',path: null,url:'https://www.icourse163.org/course/ZJU-1452997167' },
+    { text: '学习', key:'learning', path: null,url:'https://www.icourse163.org/course/ZJU-1452997167' },
     { text: '下载', key:'download', path: '/download' },
   ],
 

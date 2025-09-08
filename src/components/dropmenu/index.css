@@ -1,10 +1,19 @@
 .drop-title{
     color:#333;
     font-size: 28px;
-    margin-bottom: 20px;
+    margin-bottom: 28px;
     display: inline-block;
 }
 
 a:hover{
     color:#0062FF
+}
+
+.ant-drawer-body{
+    padding:24px 50px !important
+}
+
+.items{
+    height: 40px;
+    width: 120px;
 }

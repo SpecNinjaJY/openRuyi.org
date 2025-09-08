@@ -5,9 +5,9 @@ import { useState } from "react";
 import { message, Space, Table, Tooltip } from "antd";
 import {  CopyTwoTone } from "@ant-design/icons";
 const Download = () =>{
-      const { t } = useLanguage();
-      const [activeBtn,setActive] = useState(1)
-        const [messageApi, contextHolder] = message.useMessage();
+  const { t } = useLanguage();
+  const [activeBtn,setActive] = useState(1)
+  const [messageApi, contextHolder] = message.useMessage();
 
 const columns = [
   {

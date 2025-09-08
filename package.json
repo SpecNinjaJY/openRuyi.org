@@ -7,12 +7,21 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "server": "nodemon server/app.js"
   },
   "dependencies": {
     "@ant-design/icons": "^6.0.0",
     "antd": "^5.27.1",
+    "axios": "^1.11.0",
     "i18next": "^25.4.2",
+    "koa": "^3.0.1",
+    "koa-body": "^6.0.1",
+    "koa-compress": "^5.1.1",
+    "koa-router": "^14.0.0",
+    "koa-static": "^5.0.0",
+    "koa-views": "^8.1.0",
+    "nodemailer": "^7.0.6",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "react-i18next": "^15.7.3",

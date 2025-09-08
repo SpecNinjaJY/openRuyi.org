@@ -6,7 +6,6 @@ import LogoSvg from '@/assets/home/logo.svg';
 import { useLanguage } from '../contexts/languageContext';
 import './index.css'
 import DropMenu from './dropmenu/dropmenu';
-import { SearchOutlined } from '@ant-design/icons';
 import ScrollToTop from './ScrollToTop';
 import LanguageSwitch from './languageSwitch';
 
@@ -19,7 +18,7 @@ const LayoutComponent = () => {
   const { t } = useLanguage();
 
   const isDropdonw = () =>{
-    return ['project','develop','tech','task','learning'].includes(activeKey)
+    return ['project','develop','tech'].includes(activeKey)
   }
 
 
@@ -104,7 +103,7 @@ const LayoutComponent = () => {
       
         <ul className="flex list-none flex-wrap text-[16px] gap-4 md:gap-16">{t('menulist', { returnObjects: true })?.map((t,index)=>
           <li className='w-[60px]' key={index}  onMouseEnter={() => handleMouseEnter(t.key)} onMouseLeave={() => handleMouseLeave(t.key)} >
-            <Link to={t.path}  style={{color:activeKey == t.key? '#0062ff':'#333', cursor: isDropdonw() ? 'default':'pointer'}}>
+            <Link to={t.path} onClick={()=>t.url && window.open(t.url) }  style={{color:activeKey == t.key? '#0062ff':'#333', cursor: isDropdonw() ? 'default':'pointer'}}>
               {t.text}
             </Link>
             </li>
@@ -114,6 +113,7 @@ const LayoutComponent = () => {
           <Drawer
             placement={'top'}
             open={isDropdonw()}
+            //open={true}
             onClose={handleMouseLeave}
             mask={false} // 关闭遮罩，避免遮挡页面（可根据需求开启）
     
