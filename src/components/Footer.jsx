@@ -62,7 +62,7 @@ const Footer = () => {
             type: 'error',
             content:  error.response 
             ? `服务异常：${error.response.data.message || '请稍后重试'}`
-            : '网络异常，请检查网络连接',,
+            : '网络异常，请检查网络连接',
           });
        
       } else {
@@ -96,10 +96,11 @@ const Footer = () => {
         <div className='text-[#666] text-[16px] w-[55%] mt-10 leading-[30px]'>{t('subnotify')}</div>
 
          {/* 订阅区域 */}
-        <div className="mb-12 bg-primary/5 rounded-2xl py-8 md:py-10">
+        <div className="mb-4 bg-primary/5 rounded-2xl py-8 md:py-10">
          <Form
         form={form}
         layout="inline"
+        className='h-16'
         initialValues={{ name: '', email: '' }}
         colon={false} // 隐藏表单标签冒号，优化样式
       >
@@ -110,6 +111,7 @@ const Footer = () => {
             { required: true, message: '请输入您的姓名' },
             { min: 2, max: 100, message: '姓名长度需在 2-100 个字符之间' },
           ]}
+          className='w-[220px]'
         >
           <Input  placeholder={t('yourname')} className="flex-grow rounded-sm" maxLength={100}   prefix={<UserOutlined className="text-gray-400" />}/>
         </Form.Item>
@@ -118,10 +120,10 @@ const Footer = () => {
         {/* 邮箱（可选 + 格式验证） */}
         <Form.Item
           name="email"
-        
           rules={[
             { type: 'email', message: '请输入正确的邮箱格式' },
           ]}
+          className='w-[220px]'
         >
           <Input   prefix={<MailOutlined className="text-gray-400" />}  placeholder={t('yourEmail')}  className="flex-grow rounded-sm"  maxLength={50} />
         </Form.Item>
@@ -147,7 +149,7 @@ const Footer = () => {
             {/* © {new Date().getFullYear()} OpenRuyi {t('allRightsReserved')} */}
           </Text>
           <div className="flex flex-wrap justify-center text-[#999] text-sm">
-            {'备案号：京ICP备 05046678 号-71'}
+            {'备案号：京ICP备05046678号-71'}
           </div>
         </div>
       </div>
