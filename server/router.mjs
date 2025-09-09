@@ -95,9 +95,7 @@ router.post('/subscribe', async (ctx,next) => {
         message: '订阅信息已成功发送到指定邮箱',
       };
 
-  
-  // ctx.response.status = 200
-  // ctx.body = JSON.stringify(response.data)
+
   } catch (error) {
       // 邮件发送失败，返回 500 响应
       ctx.status = 500;

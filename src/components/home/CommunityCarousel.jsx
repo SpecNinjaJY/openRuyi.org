@@ -67,7 +67,7 @@ const CommunityCarousel = () => {
   }, []);
 
   return (
-    <div className="relative overflow-hidden h-[450px]">
+    <div className="relative overflow-hidden lg:h-[450px] sm:h-[250px] h-[150px]">
       {/* 轮播组件 */}
       <Carousel
         autoplay={false} // 已通过useEffect实现更可控的自动播放
@@ -88,10 +88,10 @@ const CommunityCarousel = () => {
               }}
             >
               {/* 渐变遮罩，提升文字可读性 */}
-              <div className="h-full absolute inset-0 text-[#1F4697] text-[60px] font-bold top-10 left-10">
+              <div className="h-full absolute inset-0 text-[#1F4697] lg:text-[60px] md:text-[40px] xs:text-[30px] font-bold top-10 left-10">
                 {t('name')}
               </div>
-               <div className="h-full absolute inset-0 text-[#1F4697] text-[24px] top-1/3 left-10">
+               <div className="h-full absolute inset-0 text-[#1F4697] lg:text-[24px] xs:text-[18px] lg:top-1/3 top-1/4 left-10">
                 {t('namedes')}
               </div>
             </div>

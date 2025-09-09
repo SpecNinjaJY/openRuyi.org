@@ -63,17 +63,17 @@ const DropMenu = (props) =>{
         <div className='w-1/3 flex flex-col justify-center '>
             <div>
                 <span className="drop-title">{'协作平台'}</span>
-                <div className='text-[#666] text-[16px] flex flex-col justify-start'>
-                    <a className='h-10'>{'如意构建平台-RuyiBuild'}</a>
-                    <a className='h-10'>{'如意测试测评平台-RuyiAVA'}</a>
-                    <a className='h-10'>{'如意CI平台-RuyiCI'}</a>
-                    <a className='h-10'>{'如意迁移平台-RuyiPort'}</a>
+                <div className='text-[#666] text-[16px] flex justify-start items-center'>
+                    <a onClick={()=>window.open('https://build.openruyi.cn')} className='h-10'>{'如意构建平台 RuyiBuild'}</a>
+                    <a onClick={()=>window.open('https://lava.openruyi.cn')} className='h-10'>{'如意测试测评平台 RuyiAVA'}</a>
+                    <a className='h-10' onClick={()=>window.open('hhttps://ci.openruyi.cn')}>{'如意CI平台 RuyiCI'}</a>
+                    <a className='h-10' onClick={()=>window.open('https://port.openruyi.cn')}>{'如意迁移平台 RuyiPort'}</a>
                 </div>
             </div>
            
         </div>
     
-        <div className='w-2/3 flex flex-col justify-center '>
+        {/* <div className='w-2/3 flex flex-col justify-center '>
             <div>
                 <span className="drop-title">{'工作组'}</span>
                 <div className='flex gap-2 text-[#666] text-[16px] justify-start'>
@@ -102,7 +102,7 @@ const DropMenu = (props) =>{
                 </div>
             </div>
            
-        </div>
+        </div> */}
     </div>:
     <div  className='flex justify-around '>
          <div className='w-1/3 flex flex-col justify-start '>

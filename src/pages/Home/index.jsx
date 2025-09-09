@@ -72,7 +72,7 @@ const Home = () => {
 
       {/* 如意系列 */}
       <section className="py-12 bg-[#f6f9ff]">
-        <div className="container px-4 flex items-baseline justify-between">
+        <div className="container px-4 flex items-baseline justify-between w-full">
           <HomeTitle title1={t('heroTitle')} title2={t('heroSubtitle')} />
           {/* <span className='text-[#0062ff] cursor-pointer flex items-center justify-center'>
             <span>{t('viewAll')}</span>
@@ -102,7 +102,7 @@ const Home = () => {
       
       
       {/* 活动日程 */}
-      <section className="pt-12 bg-[#f6f9ff] h-[1300px] bg-cover bg-no-repeat" style={{backgroundImage: `url(${cbg})`}}>
+      <section className="pt-12 bg-[#f6f9ff] hidden lg:block h-[1300px] bg-cover bg-no-repeat" style={{backgroundImage: `url(${cbg})`}}>
         <div className="container px-4 my-10 flex justify-between">
              <HomeTitle title1={t('arrange')} title2={t('arrangeDesc')} />
         </div>

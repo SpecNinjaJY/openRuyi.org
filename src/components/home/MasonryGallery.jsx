@@ -19,29 +19,23 @@ const MasonryGallery = () => {
 
 
   return (
-    <div className="flex container justify-between gap-8 ">
+    <div className="flex container justify-between flex-wrap gap-2">
 
             {imageData.map((image,id) => <div 
                   key={image.id}
-                  className="w-1/4 relative border-2 rounded-md border-transparent transition-all duration-200 hover:border-[#0062ff] cursor-pointer"
-                  style={{cursor:id>2 && 'not-allowed',border:id>2&& 'none'}}
+                  className="lg:w-[22%] xs:w-[45%] relative border-2 aspect-4/3 bg-no-repeat bg-cover bg-center flex flex-col p-8 rounded-md border-transparent transition-all duration-200 hover:border-[#0062ff] cursor-pointer"
+                  style={{cursor:id>2 && 'not-allowed',border:id>2&& 'none',backgroundImage:`url(${image.url})`}}
                   >
                   
-                  <img
-                    src={image.url}
-                    alt={image.alt}
-                    className="w-full object-cover"
-                   
-                  />
                   {id<=2?<>
-                    <div className='text-[#333] text-[24px] absolute top-10 left-10'>
+                    <div className='text-[#333] lg:text-[24px] text-[18px]  mb-3'>
                     {t(`child${id+1}.0`)}
                   </div>
-                   <div className='text-[#333] text-[14px] absolute top-[80px] left-10'>
+                   <div className='text-[#333] lg:text-[14px] text-[12px]'>
                     {t(`child${id+1}.1`)}
                   </div>
                   </>:<>
-                    <div className='text-[#999] text-[24px] absolute top-10 left-10'>{t('wait')}</div>
+                    <div className='text-[#999] lg:text-[24px] text-[18px]'>{t('wait')}</div>
                   </>}
                   
                 </div>

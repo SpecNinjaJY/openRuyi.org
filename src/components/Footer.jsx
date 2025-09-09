@@ -91,9 +91,9 @@ const Footer = () => {
         </div>
         </div>  
 
-        <div className='text-[#333] text-[20px] mt-[100px] font-semibold'>{t('subscribeMes')}</div>
+        <div className='text-[#333] text-[20px] sm:mt-[100px] mt-10 font-semibold'>{t('subscribeMes')}</div>
         
-        <div className='text-[#666] text-[16px] w-[55%] mt-10 leading-[30px]'>{t('subnotify')}</div>
+        <div className='text-[#666] sm:text-[16px] text-[14px] sm:w-[55%] w-full mt-10 leading-[30px]'>{t('subnotify')}</div>
 
          {/* 订阅区域 */}
         <div className="mb-4 bg-primary/5 rounded-2xl py-8 md:py-10">
@@ -111,7 +111,7 @@ const Footer = () => {
             { required: true, message: '请输入您的姓名' },
             { min: 2, max: 100, message: '姓名长度需在 2-100 个字符之间' },
           ]}
-          className='w-[220px]'
+          className='sm:w-[220px] w-[140px]'
         >
           <Input  placeholder={t('yourname')} className="flex-grow rounded-sm" maxLength={100}   prefix={<UserOutlined className="text-gray-400" />}/>
         </Form.Item>
@@ -123,14 +123,14 @@ const Footer = () => {
           rules={[
             { type: 'email', message: '请输入正确的邮箱格式' },
           ]}
-          className='w-[220px]'
+          className='sm:w-[220px] w-[140px]'
         >
           <Input   prefix={<MailOutlined className="text-gray-400" />}  placeholder={t('yourEmail')}  className="flex-grow rounded-sm"  maxLength={50} />
         </Form.Item>
          <Form.Item>
           <Button
              color="primary"  variant="outlined"
-              className="bg-primary hover:bg-primary/90 rounded-sm w-[180px]"
+              className="bg-primary hover:bg-primary/90 rounded-sm w-[180px] sm:mt-0 mt-4"
             onClick={handleSubmit}
             loading={isSubmitting}
             block
@@ -144,7 +144,7 @@ const Footer = () => {
         
         {/* 版权和底部信息 */}
         <div className="flex flex-col md:flex-row justify-center items-center">
-          <Text className="text-[#999] text-sm mb-2 md:mb-0 mr-10">
+          <Text className="text-[#999] text-sm mb-2 md:mb-0 sm:mr-10">
             {'Copyright © 2025 openRuyi'}
             {/* © {new Date().getFullYear()} OpenRuyi {t('allRightsReserved')} */}
           </Text>
