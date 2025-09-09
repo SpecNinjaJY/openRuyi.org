@@ -19,22 +19,7 @@ const CommunityCarousel = () => {
       descriptionKey: 'carousel.desc1',
       imageUrl: GroupSvg,
       link: '/community'
-    },
-    // {
-    //   id: 2,
-    //   titleKey: 'carousel.title2',
-    //   descriptionKey: 'carousel.desc2',
-
-    //   imageUrl: 'https://picsum.photos/id/2/1600/800',
-    //   link: '/projects'
-    // },
-    // {
-    //   id: 3,
-    //   titleKey: 'carousel.title3',
-    //   descriptionKey: 'carousel.desc3',
-    //   imageUrl: 'https://picsum.photos/id/3/1600/800',
-    //   link: '/events'
-    // }
+    }
   ];
 
   // 处理轮播变化
@@ -67,9 +52,9 @@ const CommunityCarousel = () => {
   }, []);
 
   return (
-    <div className="relative overflow-hidden lg:h-[450px] sm:h-[250px] h-[150px]">
+    <div className="relative overflow-hidden lg:h-[450px] h-[250px]">
       {/* 轮播组件 */}
-      <Carousel
+      {/* <Carousel
         autoplay={false} // 已通过useEffect实现更可控的自动播放
         infinite
         speed={500}
@@ -78,12 +63,13 @@ const CommunityCarousel = () => {
         className="relative h-[400px] md:h-[500px] lg:h-[600px]"
       >
         {carouselData.map((item) => (
-          <div key={item.id} className="relative h-full">
+           */}
+          <div key={carouselData[0].id} className="relative h-full">
             {/* 背景图片 */}
             <div 
               className="absolute inset-0 bg-cover bg-center transition-transform duration-700 ease-out h-full"
               style={{ 
-                backgroundImage: `url(${item.imageUrl})`,
+                backgroundImage: `url(${carouselData[0].imageUrl})`,
                 transform: isAnimating ? 'scale(1.05)' : 'scale(1)'
               }}
             >
@@ -91,19 +77,19 @@ const CommunityCarousel = () => {
               <div className="h-full absolute inset-0 text-[#1F4697] lg:text-[60px] md:text-[40px] xs:text-[30px] font-bold top-10 left-10">
                 {t('name')}
               </div>
-               <div className="h-full absolute inset-0 text-[#1F4697] lg:text-[24px] xs:text-[18px] lg:top-1/3 top-1/4 left-10">
+               <div className="h-full absolute inset-0 text-[#1F4697] lg:text-[24px] md:text-[18px] xs:text-[16px] lg:top-1/3 top-[40%] left-10">
                 {t('namedes')}
               </div>
             </div>
             
             {/* 轮播内容 */}
-            <div className="relative h-full flex items-center">
+            {/* <div className="relative h-full flex items-center">
               <div className="container mx-auto px-6 md:px-12 h-[450px]">
               </div>
-            </div>
+            </div> */}
           </div>
-        ))}
-      </Carousel>
+        {/* ))}
+      </Carousel> */}
       
       
       {/* 指示器 */}

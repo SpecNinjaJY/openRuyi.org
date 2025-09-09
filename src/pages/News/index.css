@@ -37,3 +37,7 @@
     position: absolute;
     left:12px
 }
+
+.ant-picker{
+  border-radius: 4px !important;
+}

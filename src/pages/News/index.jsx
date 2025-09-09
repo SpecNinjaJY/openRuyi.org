@@ -2,7 +2,7 @@
 import LogoSvg from '@/assets/news/newsbanner.svg';
 import { useLanguage } from '../../contexts/languageContext';
 import { 
-  Layout, Card, Input, Select, DatePicker, Pagination, 
+  Input, Select, DatePicker, Pagination, 
   Typography, Space, Row, Col, Tag, Divider 
 } from 'antd';
 import { useEffect, useState } from 'react';
@@ -95,6 +95,7 @@ const News = () =>{
   const [currentPage, setCurrentPage] = useState(1); // 当前页码
   const [pageSize] = useState(10); // 每页条数
   const [totalCount, setTotalCount] = useState(0); // 总条数
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
   
   // 筛选条件状态
   const [filterParams, setFilterParams] = useState({
@@ -149,6 +150,29 @@ const News = () =>{
     setCurrentPage(1); // 重置到第一页
   }, [filterParams, newsList]);
 
+
+   // 监听窗口 resize 事件，更新移动端状态
+  useEffect(() => {
+    const handleResize = () => {
+      // 防抖优化：避免频繁触发
+      clearTimeout(window.resizeTimer);
+      window.resizeTimer = setTimeout(() => {
+        setIsMobile(window.innerWidth < 768);
+      }, 100);
+    };
+
+    // 初始加载时执行一次
+    handleResize();
+    // 绑定 resize 事件
+    window.addEventListener('resize', handleResize);
+
+    // 组件卸载时清理事件和定时器
+    return () => {
+      window.removeEventListener('resize', handleResize);
+      clearTimeout(window.resizeTimer);
+    };
+  }, []);
+
   // 处理筛选条件变化
   const handleFilterChange = (type, value) => {
     setFilterParams(prev => ({
@@ -192,13 +216,12 @@ const News = () =>{
 
 
     return <div className="space-b-16">
-        <div className='relative'>
-            <img src={LogoSvg} className='w-full'/>
-            <span className='absolute left-[60px] font-semibold top-1/3 text-[36px] text-[#333]'>{t('news')}</span>
+        <div className='relative overflow-hidden bg-cover bg-center lg:h-[250px] h-[150px]'style={{backgroundImage:`url(${LogoSvg})`}} >
+            <span className='absolute left-[60px] font-semibold top-1/3 lg:text-[36px] text-[24px] text-[#333]'>{t('news')}</span>
         </div>
          <section className="py-12 bg-[#f6f9ff]">
             <div className="container px-4 flex justify-between">
-                 <Row gutter={[16, 16]} className='w-[70%]'>
+                 <Row gutter={[16, 16]} className='xl:w-[70%] w-full hidden md:flex'>
                     {/* 关键词搜索 */}
                     <Col xs={24} sm={12} md={6}>
                         <Input
@@ -209,7 +232,6 @@ const News = () =>{
                         onPressEnter={() => {}}
                         prefix={<SearchOutlined />}
                         />
-            
                     </Col>
 
                     {/* 分类筛选 */}
@@ -272,18 +294,18 @@ const News = () =>{
                   <Row key={index} onClick={()=>navigate(`/newsdetail/${news.id}`, { replace: true,state:{fromHome:false} })} gutter={[24, 16]} className='mt-10 cursor-pointer group'>
                     <Col xs={24} md={18}>
                       {/* 新闻标题 */}
-                      <Title level={5} style={{fontSize:22,fontWeight:500}} className=" mb-4 text-[#333] group-hover:text-[#0062ff] cursor-pointer transition-colors">
+                      <span  style={{fontWeight:500}} className=" mb-4 text-[#333] md:text-[22px] text-[18px]  group-hover:text-[#0062ff] cursor-pointer transition-colors">
                         {news.title}
-                      </Title>
+                      </span>
 
-                    <Space size="small" className="text-gray-500 mb-[18px]">
+                    <Space size="small" className="text-gray-500 md:mb-[18px] mb-3 md:mt-[0] mt-2">
                         <Tag color="#0062ff" size="small">
                           {getCategoryName(news.category)}
                         </Tag>
                       </Space>
                       
                       {/* 新闻摘要 */}
-                      <Text className="text-[#666] text-[16px] line-clamp-3 mb-4 block group-hover:text-[#61a0ff]">
+                      <Text className="text-[#666] md:text-[16px] text-[14px] line-clamp-3 mb-4 block group-hover:text-[#61a0ff]">
                         {news.content}
                       </Text>
                       
@@ -291,15 +313,15 @@ const News = () =>{
                       <Space size="small" >
                         
                         <Space size="middle" className="flex items-center">
-                          <Text className="text-[14px] text-[#666] group-hover:text-[#61a0ff]">{getAuthorName(news.author)}</Text>
+                          <Text className="md:text-[14px] text-[12px] text-[#666] group-hover:text-[#61a0ff]">{getAuthorName(news.author)}</Text>
                         </Space>
 
                         <Space size="middle" className="flex items-center">
-                            <span className="text-[14px] text-[#666] h-3 group-hover:text-[#61a0ff]">{'|'}</span>
+                            <span className="md:text-[14px] text-[12px]  text-[#666] h-3 group-hover:text-[#61a0ff]">{'|'}</span>
                         </Space>
 
                         <Space size="middle" className="flex items-center">  
-                          <Text className="text-[14px] text-[#666] group-hover:text-[#61a0ff]">{formatDate(news.publishTime)}</Text>
+                          <Text className="md:text-[14px] text-[12px]  text-[#666] group-hover:text-[#61a0ff]">{formatDate(news.publishTime)}</Text>
                         </Space>
                        
                       </Space>
@@ -330,6 +352,7 @@ const News = () =>{
 
              {/* 分页区域 */}
             { totalCount >0 && <div className="container flex justify-end mt-8 relative px-3">
+              {isMobile ? <Pagination simple current={currentPage}  onChange={handlePageChange} showSizeChanger={false}  pageSize={pageSize} total={totalCount} /> :
               <Pagination
                 current={currentPage}
                 pageSize={pageSize}
@@ -339,7 +362,7 @@ const News = () =>{
                 showQuickJumper
                 showTotal={(total) => `共 ${total} 条新闻`}
                 className="mt-4"
-              />
+              /> }
             </div>}
         
       </section>
