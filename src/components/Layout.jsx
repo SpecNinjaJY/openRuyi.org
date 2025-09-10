@@ -112,16 +112,20 @@ const LayoutComponent = () => {
         {
           <Drawer
             placement={'top'}
-            open={isDropdonw()}
-            //open={true}
-            onClose={handleMouseLeave}
+            //open={isDropdonw()}
+            style={{height:250}}
+            open={true}
+            //onClose={handleMouseLeave}
             mask={false} // 关闭遮罩，避免遮挡页面（可根据需求开启）
     
             className="transition-all duration-300" // 增强过渡动画
             onMouseEnter={handleDropdownMouseEnter}
             onMouseLeave={handleDropdownMouseLeave}
           >
-             <DropMenu activeKey={activeKey}/>
+             <DropMenu 
+              //activeKey={activeKey} 
+              activeKey={'develop'} 
+              />
           </Drawer>        
         }
           <div className="flex items-center space-x-3">

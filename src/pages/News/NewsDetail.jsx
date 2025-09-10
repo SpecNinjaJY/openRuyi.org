@@ -174,11 +174,11 @@ const NewsDetail = () => {
 
     
       <div className="container mx-auto px-4 py-8 bg-white shadow-sm rounded-lg"> 
-        <div className="mb-8 text-center">
-            <Title level={2} className="mb-4 text-black text-[36px]">
-            {currentNews.title}
-            </Title>
-            <Space size="middle" className="text-gray-500 mb-6 flex items-center justify-center">
+        <div className="text-center">
+            <span className="mb-3 text-black md:text-[36px] text-[20px] font-semibold inline-block">
+              {currentNews.title}
+            </span>
+            <Space size="middle" className="text-gray-500 mb-3 flex items-center justify-center">
                 <Text className='text-[#666]'>{currentNews.categoryName}</Text>
                     <span className='text-[#999]'>{'|'}</span>
                 <Text className='text-[#666]'>{currentNews.author}</Text>

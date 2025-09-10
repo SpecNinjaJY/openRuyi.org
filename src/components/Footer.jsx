@@ -144,11 +144,11 @@ const Footer = () => {
         
         {/* 版权和底部信息 */}
         <div className="flex flex-col md:flex-row justify-center items-center">
-          <Text className="text-[#999] text-sm mb-2 md:mb-0 sm:mr-10">
+          <Text className="text-[#999] md:text-sm text-[12px] mb-2 md:mb-0 sm:mr-10">
             {'Copyright © 2025 openRuyi'}
             {/* © {new Date().getFullYear()} OpenRuyi {t('allRightsReserved')} */}
           </Text>
-          <div className="flex flex-wrap justify-center text-[#999] text-sm">
+          <div className="flex flex-wrap justify-center text-[#999] md:text-sm text-[12px]">
             {'备案号：京ICP备05046678号-71'}
           </div>
         </div>
