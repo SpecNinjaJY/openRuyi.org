@@ -36,7 +36,7 @@ const LanguageSwitch = () => {
       placement="bottomRight"
       arrow
     >
-      <div className="flex items-center cursor-pointer px-2 py-1 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+      <div className="flex items-center cursor-pointer px-2 py-1 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
         <Avatar 
           icon={<GlobalOutlined />} 
           size="small" 
