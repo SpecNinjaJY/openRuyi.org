@@ -173,7 +173,7 @@ const ActivityArrange = () =>{
           >
             {yearRange.map(year => (
               <Option key={year} value={year}>
-                {year}年
+                {year}{t('time.0')}
               </Option>
             ))}
           </Select>
@@ -188,7 +188,7 @@ const ActivityArrange = () =>{
           >
             {Array.from({ length: 12 }, (_, i) => (
               <Option key={i} value={i}>
-                {i + 1}月
+                {i + 1}{t('time.1')}
               </Option>
             ))}
           </Select>

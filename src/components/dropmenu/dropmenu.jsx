@@ -63,10 +63,10 @@ const DropMenu = (props) =>{
         <div className='w-full flex flex-col justify-center items-center '>
                 <span className="drop-title lg:text-[28px] text-[24px]">{'协作平台'}</span>
                 <div className='text-[#666] lg:text-[16px] text-[14px] flex justify-start items-center gap-32'>
-                    <a onClick={()=>window.open('https://build.openruyi.cn')} className='h-[80px]'>{'如意构建平台'}<br/> {'RuyiBuild'}</a>
-                    <a onClick={()=>window.open('https://lava.openruyi.cn')} className='h-[80px]'>{'如意测试测评平台'}<br/> {'RuyiAVA'}</a>
-                    <a className='h-[80px]' onClick={()=>window.open('hhttps://ci.openruyi.cn')}>{'如意CI平台'}<br/> {'RuyiCI'}</a>
-                    <a className='h-[80px]' onClick={()=>window.open('https://port.openruyi.cn')}>{'如意迁移平台'}<br/>{'RuyiPort'}</a>
+                    <a onClick={()=>window.open('https://build.openruyi.cn')} className='h-[80px]'>{t('developlist.0')}<br/> {'RuyiBuild'}</a>
+                    <a onClick={()=>window.open('https://lava.openruyi.cn')} className='h-[80px]'>{t('developlist.1')}<br/> {'RuyiAVA'}</a>
+                    <a className='h-[80px]' onClick={()=>window.open('https://ci.openruyi.cn')}>{t('developlist.2')}<br/> {'RuyiCI'}</a>
+                    <a className='h-[80px]' onClick={()=>window.open('https://port.openruyi.cn')}>{t('developlist.3')}<br/>{'RuyiPort'}</a>
                 </div>
         </div>
     

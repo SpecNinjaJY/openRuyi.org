@@ -48,11 +48,11 @@ const Footer = () => {
       
         messageApi.open({
             type: 'success',
-            content: '订阅成功！',
+            content: t('mesuccess'),
         });
         form.resetFields(); // 重置表单
       } else {
-        message.error(`提交失败：${response.data.message}`, 3);
+        message.error(`${t('submitFail') + ':' + response.data.message}`);
       }
     } catch (error) {
       // 5. 错误处理（表单验证失败/网络异常/后端错误）
@@ -108,8 +108,8 @@ const Footer = () => {
         <Form.Item
           name="name"
           rules={[
-            { required: true, message: '请输入您的姓名' },
-            { min: 2, max: 100, message: '姓名长度需在 2-100 个字符之间' },
+            { required: true, message: t('nameplaceholder') },
+            { min: 2, max: 100, message: t('namealert') },
           ]}
           className='sm:w-[220px] w-[140px]'
         >
@@ -121,7 +121,7 @@ const Footer = () => {
         <Form.Item
           name="email"
           rules={[
-            { type: 'email', message: '请输入正确的邮箱格式' },
+            { type: 'email', message: t('emailplaceholder') },
           ]}
           className='sm:w-[220px] w-[140px]'
         >

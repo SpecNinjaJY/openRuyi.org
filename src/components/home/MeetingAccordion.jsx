@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { ClockCircleOutlined, LinkOutlined, UserOutlined, DownOutlined, UpOutlined, HeatMapOutlined, EnvironmentOutlined } from '@ant-design/icons';
+import { ClockCircleOutlined, LinkOutlined, UserOutlined, DownOutlined, UpOutlined, EnvironmentOutlined } from '@ant-design/icons';
 import 'tailwindcss/tailwind.css'
 import dayjs from 'dayjs';
 import emptyLogo from '@/assets/news/empty.svg'
-import { useLanguage } from '../../contexts/LanguageContext';
+import { useLanguage } from '../../contexts/languageContext';
 // 示例会议数据
 
 
@@ -66,26 +66,26 @@ const MeetingAccordion = (props) => {
                 } transition-all duration-300 ease-in-out overflow-hidden`}
               >
                 <div className="border-t border-gray-100 py-4">
-                  <h5 className="text-sm font-medium text-gray-700 mb-3">会议详情</h5>
+                  <h5 className="text-sm font-medium text-gray-700 mb-3">{t('meetingdetail')}</h5>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm">
                     {/* 会议号 */}
                     <div className="flex items-center gap-2">
                       <UserOutlined className="text-gray-400 w-4 text-center" />
-                      <span className="text-gray-600">会议号：</span>
+                      <span className="text-gray-600">{t('meetingId')}：</span>
                       <span className="font-mono text-gray-900">{meeting.meetingId}</span>
                     </div>
                     {/* 主持人（可选） */}
                     {meeting.host && (
                       <div className="flex items-center gap-2">
                         <UserOutlined className="text-gray-400 w-4 text-center" />
-                        <span className="text-gray-600">主持人：</span>
+                        <span className="text-gray-600">{t('person')}：</span>
                         <span className="text-gray-900">{meeting.host}</span>
                       </div>
                     )}
                     {/* 会议链接 */}
                     <div className="flex items-center gap-2 md:col-span-2">
                       <LinkOutlined className="text-gray-400 w-4 text-center" />
-                      <span className="text-gray-600">会议链接：</span>
+                      <span className="text-gray-600">{t('meetinglink')}：</span>
                       <a 
                         href={meeting.link} 
                         target="_blank" 
@@ -103,13 +103,13 @@ const MeetingAccordion = (props) => {
                       onClick={() => window.open(meeting.link, '_blank')}
                       className="px-3 py-1.5 bg-blue-500 text-white text-sm rounded hover:bg-blue-600 transition-colors"
                     >
-                      进入会议
+                      {t('joinMeet')}
                     </button>
                     <button 
                       onClick={() => navigator.clipboard.writeText(meeting.meetingId)}
                       className="px-3 py-1.5 bg-gray-100 text-gray-700 text-sm rounded hover:bg-gray-200 transition-colors"
                     >
-                      复制会议号
+                      {t('复制会议号')}
                     </button>
                   </div>
                 </div>

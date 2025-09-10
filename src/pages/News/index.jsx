@@ -225,7 +225,7 @@ const News = () =>{
                     {/* 关键词搜索 */}
                     <Col xs={24} sm={12} md={6}>
                         <Input
-                        placeholder="输入标题或内容关键词"
+                        placeholder={t("inputplholder")}
                         value={filterParams.searchKey}
                         onChange={(e) => handleFilterChange('searchKey', e.target.value)}
                         allowClear
@@ -241,7 +241,7 @@ const News = () =>{
                         style={{ width: '100%' }}
                         value={filterParams.category}
                         onChange={(value) => handleFilterChange('category', value)}
-                        placeholder="请选择分类"
+                        placeholder={t("inputsel")}
                         >
                         {newsCategories.map(category => (
                             <Option key={category.id} value={category.id}>
@@ -260,7 +260,7 @@ const News = () =>{
                         style={{ width: '100%' }}
                         value={filterParams.author}
                         onChange={(value) => handleFilterChange('author', value)}
-                        placeholder="请选择作者"
+                        placeholder={t("inputauthor")}
                         >
                         {newsAuthors.map(author => (
                             <Option key={author.id} value={author.id}>
@@ -279,7 +279,7 @@ const News = () =>{
                         style={{ width: '100%' }}
                         value={filterParams.dateRange}
                         onChange={(date) => handleFilterChange('dateRange', date)}
-                        placeholder={['开始日期', '结束日期']}
+                        placeholder={[t('startDate'), t('endDate')]}
                         format="YYYY-MM-DD"
                         />
                 
@@ -360,7 +360,7 @@ const News = () =>{
                 onChange={handlePageChange}
                 showSizeChanger={false}
                 showQuickJumper
-                showTotal={(total) => `共 ${total} 条新闻`}
+                showTotal={(total) => `${t('pageInfo.0') + total + t('pageInfo.1')}`}
                 className="mt-4"
               /> }
             </div>}

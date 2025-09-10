@@ -15,6 +15,9 @@ export default {
   //下拉区域
   more:'更多',
 
+  developlist:['如意构建平台','如意测试测评平台','如意CI平台','如意迁移平台'],
+  developlistEN:['如意构建平台','如意测试测评平台','如意CI平台','如意迁移平台'],
+
   // 首页区
   heroTitle: '如意系列',
   heroSubtitle: 'openRuyi 社区开源项目',
@@ -92,15 +95,30 @@ export default {
   goBack: '返回上一页',
   pageNotFound: '页面未找到',
   pageNotFoundDescription: '抱歉，您访问的页面不存在或已被移动。请检查网址或尝试搜索。',
-  searchPlaceholder: '搜索内容...',
-  quickNavigation: '快捷导航',
-  documentation: '文档中心',
-  stillNeedHelp: '仍然需要帮助？',
-  helpDescription: ' 如果您无法找到所需内容，请 ',
-  contactSupport: '联系我们的支持团队',
-
 
   //新闻页面
-  empty:'暂无符合条件的新闻数据'
+  empty:'暂无符合条件的新闻数据',
+  inputplholder:'输入标题或内容关键词',
+  inputsel:'请选择分类',
+  inputauthor:'请选择作者',
+  startDate:'开始日期',
+  endDate:'结束日期',
+  pageInfo:['共','条新闻'],
+  time:['年','月'],
+
+  //会议活动
+  meetingdetail:'会议详情',
+  meetingId:'会议ID',
+  person:'主持人',
+  meetinglink:'会议链接',
+  joinMeet:'进入会议',
+  copymeetid:'复制会议号',
+
+  //页脚
+  mesuccess:'订阅成功！',
+  submitFail:'提交失败',
+  nameplaceholder:'请输入您的姓名',
+  namealert:'姓名长度需在 2-100 个字符之间',
+  emailplaceholder:'请输入正确的邮箱格式'
 };
     

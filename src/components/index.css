@@ -136,6 +136,10 @@ button:focus-visible {
   outline: none !important;
 }
 
+.ant-menu-inline{
+  border:none !important
+}
+
 
 
 
