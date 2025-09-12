@@ -27,6 +27,8 @@ export default {
   child3:['RVCK','如意内核同源工程'],
   wait:'敬请期待',
 
+  coplatform:'协作平台',
+
 
   //赞助方
   

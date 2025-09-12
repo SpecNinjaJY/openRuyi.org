@@ -61,7 +61,7 @@ const DropMenu = (props) =>{
     
     activeKey == 'develop'?<div className='flex justify-center'>
         <div className='w-full flex flex-col justify-center items-center '>
-                <span className="drop-title lg:text-[28px] text-[24px]">{'协作平台'}</span>
+                <span className="drop-title lg:text-[28px] text-[24px]">{t('coplatform')}</span>
                 <div className='text-[#666] lg:text-[16px] text-[14px] flex justify-start items-center gap-32'>
                     <a onClick={()=>window.open('https://build.openruyi.cn')} className='h-[80px]'>{t('developlist.0')}<br/> {'RuyiBuild'}</a>
                     <a onClick={()=>window.open('https://lava.openruyi.cn')} className='h-[80px]'>{t('developlist.1')}<br/> {'RuyiAVA'}</a>

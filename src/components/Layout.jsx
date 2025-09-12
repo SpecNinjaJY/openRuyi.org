@@ -248,7 +248,7 @@ const menuItems = [
         </Link>
       
         <ul className="list-none flex-wrap text-[16px] hidden md:flex gap-4 md:gap-8">{t('menulist', { returnObjects: true })?.map((t,index)=>
-          <li className='w-[60px]' key={index}  onMouseEnter={() => handleMouseEnter(t.key)} onMouseLeave={() => handleMouseLeave(t.key)} >
+          <li key={index}  onMouseEnter={() => handleMouseEnter(t.key)} onMouseLeave={() => handleMouseLeave(t.key)} >
             <Link to={t.path} onClick={()=>t.url && window.open(t.url) }  style={{color:activeKey == t.key? '#0062ff':'#333', cursor: isDropdonw() ? 'default':'pointer'}}>
               {t.text}
             </Link>
