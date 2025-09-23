@@ -1,0 +1,43 @@
+.ant-select-selection-item{
+    /* font-size: 16px;
+    color:#333 */
+}
+
+/* .ant-input-outlined{
+    border:none
+} */
+/* .ant-picker{
+    border:none
+} */
+
+
+
+/* .custom-no-bg-select {
+
+.ant-select-selector {
+    background-color: transparent !important; 
+    border: none !important;
+    box-shadow: none !important; /
+  }
+
+.ant-select-disabled .ant-select-selector {
+    background-color: transparent !important;
+    border: none !important;
+  }
+
+.ant-select-item-option-active:not(.ant-select-item-option-disabled) {
+    background-color: rgba(0, 122, 255, 0.1) !important; 
+  }
+} */
+
+
+.ant-pagination-total-text{
+    color:#999;
+    font-size: 14px;
+    position: absolute;
+    left:12px
+}
+
+.ant-picker{
+  border-radius: 4px !important;
+}
