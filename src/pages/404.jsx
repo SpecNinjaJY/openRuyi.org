@@ -7,7 +7,7 @@ import {
   HomeOutlined,
   FrownOutlined
 } from '@ant-design/icons';
-import { useLanguage } from '../contexts/languageContext';
+import { useLanguage } from '@/contexts/languageContext.jsx';
 
 const { Title, Paragraph, Text } = Typography;
 

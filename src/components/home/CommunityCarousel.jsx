@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Carousel, Typography} from 'antd';
-import { useLanguage } from '../../contexts/languageContext';
+import { useLanguage } from '@/contexts/languageContext.jsx';
 import GroupSvg from '@/assets/home/group.svg';
 
 const { Title, Paragraph } = Typography;

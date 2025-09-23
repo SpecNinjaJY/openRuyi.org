@@ -3,7 +3,7 @@ import { Outlet, Link, useLocation, useNavigate } from 'react-router-dom';
 import { Button, Drawer, Layout, Menu } from 'antd';
 import Footer from './footer';
 import LogoSvg from '@/assets/home/logo.svg';
-import { useLanguage } from '../contexts/languageContext';
+import { useLanguage } from '@/contexts/languageContext';
 import './index.css'
 import DropMenu from './dropmenu/dropmenu';
 import ScrollToTop from './ScrollToTop';

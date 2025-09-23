@@ -1,6 +1,6 @@
 import { Col, Divider, Row } from 'antd'
 import './index.css'
-import { useLanguage } from '../../contexts/languageContext';
+import { useLanguage } from '@/contexts/languageContext.jsx';
 
 const DropMenu = (props) =>{
     const { activeKey } = props

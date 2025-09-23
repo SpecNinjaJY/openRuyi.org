@@ -3,7 +3,7 @@ import group1 from '@/assets/home/other1.svg'
 import group2 from '@/assets/home/other2.svg'
 import group3 from '@/assets/home/other3.svg'
 import group4 from '@/assets/home/other4.svg'
-import { useLanguage } from '../../contexts/languageContext';
+import { useLanguage } from '@/contexts/languageContext.jsx';
 
 
 const MasonryGallery = () => {

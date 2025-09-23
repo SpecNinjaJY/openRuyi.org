@@ -3,7 +3,7 @@ import { Button, Calendar,Flex,Select,Tabs  } from 'antd';
 import dayjs from 'dayjs';
 import { LeftOutlined, RightOutlined } from '@ant-design/icons';
 import '../index.css'
-import { useLanguage } from '../../contexts/languageContext';
+import { useLanguage } from '@/contexts/languageContext.jsx';
 import MeetingAccordion from './MeetingAccordion';
 import zhCN from 'antd/locale/zh_CN';
 const meetings = [

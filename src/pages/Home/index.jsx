@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLanguage } from '../../contexts/languageContext';
+import { useLanguage } from '@/contexts/languageContext.jsx';
 import CommunityCarousel from '../../components/home/CommunityCarousel';
 import HomeTitle from '../../components/home/HomeTitle';
 import Arrow from '@/assets/home/arrow.svg'

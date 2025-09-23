@@ -3,7 +3,7 @@ import { ClockCircleOutlined, LinkOutlined, UserOutlined, DownOutlined, UpOutlin
 import 'tailwindcss/tailwind.css'
 import dayjs from 'dayjs';
 import emptyLogo from '@/assets/news/empty.svg'
-import { useLanguage } from '../../contexts/languageContext';
+import { useLanguage } from '@/contexts/languageContext.jsx';
 // 示例会议数据
 
 

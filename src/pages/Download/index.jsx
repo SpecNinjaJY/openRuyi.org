@@ -1,4 +1,4 @@
-import { useLanguage } from "../../contexts/languageContext";
+import { useLanguage } from "@/contexts/languageContext.jsx";
 import downloadbanner from '@/assets/download/banner.svg'
 import './index.css'
 import { useEffect, useState } from "react";

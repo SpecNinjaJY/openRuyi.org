@@ -3,7 +3,7 @@ import { useParams, useNavigate, Link, useLocation } from 'react-router-dom';
 import {  Breadcrumb, Typography, Button,  Space} from 'antd';
 import ReactMarkdown from 'react-markdown'; // Markdown解析库
 import remarkGfm from 'remark-gfm'; // 支持GFM（表格、删除线等）
-import { useLanguage } from '../../contexts/languageContext';
+import { useLanguage } from '@/contexts/languageContext.jsx';
 
 
 // 解构组件

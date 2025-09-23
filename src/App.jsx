@@ -23,7 +23,6 @@ function App() {
     };
   }, []);
 
-  console.log(window.innerWidth)
   return (
     <ConfigProvider locale={zhCN}
       theme={{

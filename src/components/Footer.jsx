@@ -4,7 +4,7 @@ import {
   MailOutlined,
   UserOutlined
 } from '@ant-design/icons';
-import { useLanguage } from '../contexts/languageContext';
+import { useLanguage } from '@/contexts/languageContext.jsx';
 import LogoSvg from '@/assets/home/logo.svg';
 import axios from 'axios';
 

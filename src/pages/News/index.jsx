@@ -1,6 +1,6 @@
 
 import LogoSvg from '@/assets/news/newsbanner.svg';
-import { useLanguage } from '../../contexts/languageContext';
+import { useLanguage } from '@/contexts/languageContext.jsx';
 import { 
   Input, Select, DatePicker, Pagination, 
   Typography, Space, Row, Col, Tag, Divider 
