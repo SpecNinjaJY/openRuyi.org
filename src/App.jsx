@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { ConfigProvider } from 'antd';
-import Router from './router';
+import Router from '@/router/index.jsx';
 import zhCN from 'antd/locale/zh_CN';
 
 

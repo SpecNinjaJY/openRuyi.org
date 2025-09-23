@@ -1,12 +1,11 @@
 import React from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import Home from '../pages/home/index';
-// import Develop from '../pages/Develop';
-import News from '../pages/news/index';
-import NewsDetail from '../pages/news/newsDetail';
-import Download from '../pages/download/index';
-import NotFound from '../pages/404';
-import Layout from '../components/Layout';
+import Home from '@/pages/home/index';
+import News from '@/pages/news/index';
+import NewsDetail from '@/pages/news/newsDetail';
+import Download from '@/pages/download/index';
+import NotFound from '@/pages/404';
+import Layout from '@/components/Layout';
 
 const router = createBrowserRouter([
   {

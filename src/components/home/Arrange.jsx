@@ -4,7 +4,7 @@ import dayjs from 'dayjs';
 import { LeftOutlined, RightOutlined } from '@ant-design/icons';
 import '../index.css'
 import { useLanguage } from '@/contexts/languageContext.jsx';
-import MeetingAccordion from './MeetingAccordion';
+import MeetingAccordion from '@/components/home/MeetingAccordion.jsx';
 import zhCN from 'antd/locale/zh_CN';
 const meetings = [
     {

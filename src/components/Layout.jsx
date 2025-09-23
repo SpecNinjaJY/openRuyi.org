@@ -1,13 +1,13 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Outlet, Link, useLocation, useNavigate } from 'react-router-dom';
 import { Button, Drawer, Layout, Menu } from 'antd';
-import Footer from './footer';
+import Footer from '@/components/footer';
 import LogoSvg from '@/assets/home/logo.svg';
-import { useLanguage } from '@/contexts/languageContext';
+import { useLanguage } from '@/contexts/languageContext.jsx';
 import './index.css'
-import DropMenu from './dropmenu/dropmenu';
-import ScrollToTop from './ScrollToTop';
-import LanguageSwitch from './languageSwitch';
+import DropMenu from '@/components/dropmenu/dropmenu.jsx';
+import ScrollToTop from '@/components/ScrollToTop.jsx';
+import LanguageSwitch from '@/components/languageSwitch.jsx';
 import { MenuFoldOutlined, MenuUnfoldOutlined } from '@ant-design/icons';
 
 const { Header: AntHeader, Content, Footer: AntFooter } = Layout;

@@ -1,12 +1,11 @@
 import React from 'react';
 import { useLanguage } from '@/contexts/languageContext.jsx';
-import CommunityCarousel from '../../components/home/CommunityCarousel';
-import HomeTitle from '../../components/home/HomeTitle';
+import CommunityCarousel from '@/components/home/CommunityCarousel';
+import HomeTitle from '@/components/home/HomeTitle';
 import Arrow from '@/assets/home/arrow.svg'
-import MasonryGallery from '../../components/home/MasonryGallery';
-import NewItem from '../../components/home/NewsItem';
-import ActivityArrange from '../../components/home/Arrange';
-import './index.css'
+import MasonryGallery from '@/components/home/MasonryGallery';
+import NewItem from '@/components/home/NewsItem';
+import ActivityArrange from '@/components/home/Arrange';
 import cbg from '@/assets/home/calendarbg.svg'
 import { useNavigate } from 'react-router-dom';
 

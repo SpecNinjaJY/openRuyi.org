@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import '../index.css'
+import '@/components/index.css'
 
 const NewItem = (props) =>{
     const {title,url,desc,date,type,id} = props

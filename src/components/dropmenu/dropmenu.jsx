@@ -1,4 +1,3 @@
-import { Col, Divider, Row } from 'antd'
 import './index.css'
 import { useLanguage } from '@/contexts/languageContext.jsx';
 
