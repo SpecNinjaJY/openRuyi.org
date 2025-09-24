@@ -5,7 +5,7 @@ import News from '@/pages/news/index';
 import NewsDetail from '@/pages/news/newsDetail';
 import Download from '@/pages/download/index';
 import NotFound from '@/pages/404';
-import Layout from '@/components/Layout';
+import Layout from '@/components/layout';
 
 const router = createBrowserRouter([
   {
