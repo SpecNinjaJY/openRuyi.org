@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Outlet, Link, useLocation, useNavigate } from 'react-router-dom';
 import { Button, Drawer, Layout, Menu } from 'antd';
-import Footer from '@/components/footer';
+import Footer from '@/components/footer.jsx';
 import LogoSvg from '@/assets/home/logo.svg';
 import { useLanguage } from '@/contexts/languageContext.jsx';
 import './index.css'
