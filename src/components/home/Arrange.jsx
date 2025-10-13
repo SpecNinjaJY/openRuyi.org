@@ -6,88 +6,94 @@ import '../index.css'
 import { useLanguage } from '@/contexts/languageContext.jsx';
 import MeetingAccordion from '@/components/home/MeetingAccordion.jsx';
 import zhCN from 'antd/locale/zh_CN';
-const meetings = [
-    {
-    id: 'm1',
-    name: '产品需求评审会 V2.0',
-    date:'2025-09-04',
-      code:1,
-    time: '10:00-11:30',
-    location: '线上腾讯会议',
-    type: '会议',
-    meetingId: '876 5432 1987',
-    link: 'https://meeting.tencent.com/dm/abc123xyz',
-    host: '张产品经理',
+// const meetings = [
+//     {
+//     id: 'm1',
+//     name: '产品需求评审会 V2.0',
+//     date:'2025-09-04',
+//       code:1,
+//     time: '10:00-11:30',
+//     location: '线上腾讯会议',
+//     type: '会议',
+//     meetingId: '876 5432 1987',
+//     link: 'https://meeting.tencent.com/dm/abc123xyz',
+//     host: '张产品经理',
 
-  },
-  {
-    id: 'm2',
-    name: '前端架构优化讨论会',
-    date:'2025-09-05',
-      code:1,
-    time: '14:00-16:00',
-    location: '公司3楼会议室A',
-    type: '会议',
-    meetingId: '987 6543 2109',
-    link: 'https://zoom.us/j/98765432109?pwd=abcdef',
-    host: '李前端负责人'
-  },
-  {
-    id: 'm3',
-    name: 'Q4 项目规划启动会',
-    time: '09:30-11:00',
-    date:'2025-09-06',
-    code:1,
-    location: '线上飞书会议',
-    type: '会议',
-    meetingId: '7654-3210-9876',
-    link: 'https://meet.larksuite.com/j/765432109876',
-    host: '王项目经理'
-  }
-]
+//   },
+//   {
+//     id: 'm2',
+//     name: '前端架构优化讨论会',
+//     date:'2025-09-05',
+//       code:1,
+//     time: '14:00-16:00',
+//     location: '公司3楼会议室A',
+//     type: '会议',
+//     meetingId: '987 6543 2109',
+//     link: 'https://zoom.us/j/98765432109?pwd=abcdef',
+//     host: '李前端负责人'
+//   },
+//   {
+//     id: 'm3',
+//     name: 'Q4 项目规划启动会',
+//     time: '09:30-11:00',
+//     date:'2025-09-06',
+//     code:1,
+//     location: '线上飞书会议',
+//     type: '会议',
+//     meetingId: '7654-3210-9876',
+//     link: 'https://meet.larksuite.com/j/765432109876',
+//     host: '王项目经理'
+//   }
+// ]
 
-const org =[
-    {
-    id: 'm5',
-    name: '需求评审会 V2.0',
-    date:'2025-09-06',
-    time: '10:00-11:30',
-    location: '线上腾讯会议',
-    type: '社区',
-    code:2,
-    meetingId: '876 5432 1987',
-    link: 'https://meeting.tencent.com/dm/abc123xyz',
-    host: '张产品经理',
+const meetings = []
 
-  },
-  {
-    id: 'm5',
-    name: '架构优化讨论会',
-    date:'2025-09-08',
-    time: '14:00-16:00',
-    location: '公司3楼会议室A',
-    type: '社区',
-    code:2,
-    meetingId: '987 6543 2109',
-    link: 'https://zoom.us/j/98765432109?pwd=abcdef',
-    host: '李前端负责人'
-  },
-]
+const org = []
 
-const activity = [
-    {
-    id: 'm7',
-    name: '架构优化讨论会',
-    date:'2025-09-10',
-    time: '14:00-16:00',
-    location: '公司3楼会议室A',
-    type: '活动赛事',
-    code:3,
-    meetingId: '987 6543 2109',
-    link: 'https://zoom.us/j/98765432109?pwd=abcdef',
-    host: '李前端负责人'
-  }
-]
+// const org =[
+//     {
+//     id: 'm5',
+//     name: '需求评审会 V2.0',
+//     date:'2025-09-06',
+//     time: '10:00-11:30',
+//     location: '线上腾讯会议',
+//     type: '社区',
+//     code:2,
+//     meetingId: '876 5432 1987',
+//     link: 'https://meeting.tencent.com/dm/abc123xyz',
+//     host: '张产品经理',
+
+//   },
+//   {
+//     id: 'm5',
+//     name: '架构优化讨论会',
+//     date:'2025-09-08',
+//     time: '14:00-16:00',
+//     location: '公司3楼会议室A',
+//     type: '社区',
+//     code:2,
+//     meetingId: '987 6543 2109',
+//     link: 'https://zoom.us/j/98765432109?pwd=abcdef',
+//     host: '李前端负责人'
+//   },
+// ]
+
+// const activity = [
+//     {
+//     id: 'm7',
+//     name: '架构优化讨论会',
+//     date:'2025-09-10',
+//     time: '14:00-16:00',
+//     location: '公司3楼会议室A',
+//     type: '活动赛事',
+//     code:3,
+//     meetingId: '987 6543 2109',
+//     link: 'https://zoom.us/j/98765432109?pwd=abcdef',
+//     host: '李前端负责人'
+//   }
+// ]
+
+const activity=[]
 
 
 const getListData = value => {

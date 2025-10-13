@@ -83,7 +83,7 @@ const Home = () => {
       </section>
       
       {/* 新闻数据 */}
-      <section className="pt-12 bg-[#f6f9ff]">
+      {/* <section className="pt-12 bg-[#f6f9ff]">
         <div className="container px-4 flex justify-between">
           <HomeTitle title1={t('latestNews')} title2={t('latestNewsDesc')} />
           <span className='text-[#0062ff] cursor-pointer flex items-center justify-center' onClick={()=>navigate('/news')}>
@@ -96,7 +96,7 @@ const Home = () => {
               latestNews?.map((l,index)=><NewItem key={index} id={index} title={l.title} desc={l.desc} url={l.avatar} date={l.date} type={l.type} />)
             }
          </div>
-      </section>
+      </section> */}
       
       
       

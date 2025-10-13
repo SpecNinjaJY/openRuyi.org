@@ -3,7 +3,7 @@ export default {
     { text: 'Download', key: 'download', path: '/download' },
     // { text: 'Projects', key: 'project', path: '/' },
     { text: 'Development', key: 'develop', path: null },
-    { text: 'News', key: 'news', path: '/news' },
+    //{ text: 'News', key: 'news', path: '/news' },
     // { text: 'Technology', key: 'tech', path: null },
     // { text: 'Tasks', key: 'task', path: null, url: 'https://www.icourse163.org/course/ZJU-1452997167' },
     // { text: 'Learning', key: 'learning', path: null, url: 'https://www.icourse163.org/course/ZJU-1452997167' }
