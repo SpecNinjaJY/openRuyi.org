@@ -91,6 +91,7 @@ export default {
   t1des2:'openRuyi 25.09 (RVA20)  是面向 RVA20 硬件平台基于 X.X 内核的滚动版本，面服务器、云和 FPGA 场景，提供 ISO、QCOW2、rootfs 等多种制品类型。',
 
   column:['应用场景','软件包类型','软件包大小','完整性校验','软件包下载'],
+  download:'下载',
  
 
   // 404页面

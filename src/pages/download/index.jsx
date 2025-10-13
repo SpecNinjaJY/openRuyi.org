@@ -50,7 +50,7 @@ const columns = [
     dataIndex:'download',
     key: 'action',
     render: (_, record) => (
-        <a className="text-[#0062ff] cursor-pointer">{t('menulist.6.text')}</a>
+        <a className="text-[#0062ff] cursor-pointer">{t('download')}</a>
         
     ),
   },
@@ -69,7 +69,6 @@ const copyToClipboard = async (text) => {
       type: 'success',
       content: '复制成功！',
     });
-      console.log(text)
   } catch (err) {
     // 复制失败（如浏览器不支持、无权限）
      messageApi.open({
@@ -139,7 +138,7 @@ const data = [
                   </Space>
                   : 
                   col.dataIndex == 'download'? 
-                    <a className="text-[#0062ff] cursor-pointer">{t('menulist.6.text')}</a>
+                    <a className="text-[#0062ff] cursor-pointer">{t('download')}</a>
                   :
                   item[col.dataIndex]}
                 </Text>

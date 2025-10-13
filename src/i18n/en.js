@@ -91,6 +91,8 @@ export default {
 
   column: ['Application Scenarios', 'Package Type', 'Package Size', 'Integrity Check', 'Package Download'],
 
+  download:'Download',
+
 
   // 404 page
   goBack: 'Go Back',
