@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { ConfigProvider } from 'antd';
 import Router from '@/router/index.jsx';
 import zhCN from 'antd/locale/zh_CN';
 
 
 function App() {
+
+
 
   return (
     <ConfigProvider locale={zhCN}

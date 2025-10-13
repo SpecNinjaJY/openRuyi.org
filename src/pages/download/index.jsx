@@ -151,27 +151,17 @@ const data = [
   );
 
 
- // 监听窗口 resize 事件，更新移动端状态
   useEffect(() => {
-    const handleResize = () => {
-      // 防抖优化：避免频繁触发
-      clearTimeout(window.resizeTimer);
-      window.resizeTimer = setTimeout(() => {
-        setIsMobile(window.innerWidth < 768);
-      }, 100);
-    };
-
-    // 初始加载时执行一次
-    handleResize();
-    // 绑定 resize 事件
-    window.addEventListener('resize', handleResize);
-
-    // 组件卸载时清理事件和定时器
-    return () => {
-      window.removeEventListener('resize', handleResize);
-      clearTimeout(window.resizeTimer);
-    };
+    const mediaQuery = window.matchMedia('(max-width: 767px)');
+    // 初始设置
+    setIsMobile(mediaQuery.matches);
+    // 监听媒体查询变化
+    const handleChange = (e) => setIsMobile(e.matches);
+    mediaQuery.addEventListener('change', handleChange);
+    
+    return () => mediaQuery.removeEventListener('change', handleChange);
   }, []);
+
 
     return <div className="bg-[#f6f9ff] pb-10">
          {contextHolder}

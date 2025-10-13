@@ -196,12 +196,12 @@ const menuItems = [
       }
     ]
   },
-  {
-    key: 'news',
-    label: t('menulist.2.text'),
-    isRoute: true, // 标识为路由链接
-    path: '/news' // 路由路径
-  }
+  // {
+  //   key: 'news',
+  //   label: t('menulist.2.text'),
+  //   isRoute: true, // 标识为路由链接
+  //   path: '/news' // 路由路径
+  // }
 ];
 
 
